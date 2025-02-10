@@ -514,6 +514,68 @@ h2 {
     font-size: 0.9rem;
 }
 
+/* コミュニティー */
+.community {
+    background-color: var(--background-color);
+    padding: 5rem 2rem;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.community-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.community-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-out;
+}
+
+.community-card:hover img {
+    transform: scale(1.05);
+}
+
+.community-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.community-overlay h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.community-description {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     .hero-content h1 {
