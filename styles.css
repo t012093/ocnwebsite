@@ -231,12 +231,20 @@ h2 {
     transform: translateY(-10px);
 }
 
-.service-card img {
+.service-image-wrapper {
     width: 100%;
     height: 350px;
-    object-fit: scale-down;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.service-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: 10px;
-    background-color: var(--background-color);
 }
 
 .service-card h3 {
@@ -257,6 +265,68 @@ h2 {
     padding: 0.5rem 1rem 1.5rem;
     font-size: 1rem;
     line-height: 1.8;
+}
+
+/* 企業・開発者向けのService Grid */
+.business-service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.business-service-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.business-service-card:hover img {
+    transform: scale(1.05);
+}
+
+.business-service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    transition: transform 0.3s ease;
+}
+
+.business-service-card .content {
+    padding: 1rem;
+}
+
+.business-service-card h3 {
+    font-family: "Mulish", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.business-service-card p {
+    font-family: "Mulish", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .business-service-card {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ニュース */
@@ -468,11 +538,11 @@ h2 {
 .footer-info h3 {
     font-family: "Mulish", serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 300;
     font-style: normal;
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .footer-info p {
