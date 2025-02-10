@@ -31,7 +31,7 @@ body {
     position: fixed;
     width: 100%;
     background: rgba(18, 18, 18, 0.98);
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -42,15 +42,19 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 0.5rem;
 }
 
 .logo {
-    font-family: "Mulish", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 2rem;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -270,10 +274,9 @@ h2 {
 
 .news-slider-container {
     display: flex;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 5rem;
+    padding: 1rem;
     overflow-x: auto;
-    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -283,13 +286,16 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .news-slide img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .news-slide:hover img {
@@ -297,10 +303,12 @@ h2 {
 }
 
 .news-content {
-    padding: 1.5rem;
+    padding: 0.8rem;
+    background: linear-gradient(to top, rgba(18, 18, 18, 1) 90%, rgba(18, 18, 18, 0.8));
 }
 
 .news-content h3 {
+    white-space: normal;
     font-family: "Mulish", serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -311,6 +319,7 @@ h2 {
 }
 
 .news-content p {
+    white-space: normal;
     font-family: "Mulish", serif;
     font-optical-sizing: auto;
     font-weight: 400;
