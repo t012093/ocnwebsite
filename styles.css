@@ -31,10 +31,11 @@ body {
     position: fixed;
     width: 100%;
     background: rgba(18, 18, 18, 0.98);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 
 .nav {
     display: flex;
@@ -52,7 +53,7 @@ body {
 }
 
 .logo img {
-    height: 40px;
+    height: 30px;
     width: auto;
     display: block;
 }
@@ -225,10 +226,16 @@ h2 {
     transition: transform 0.3s ease;
     border-radius: 10px;
     padding: 10px;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+}
+
+a.service-card {
+    display: block;
 }
 
 .service-image-wrapper {
@@ -679,6 +686,516 @@ h2 {
     margin-bottom: 4rem;
 }
 
+/* DXサービスページ */
+.service-detail {
+    padding-top: 80px;
+}
+
+.service-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.service-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.service-hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    z-index: 2;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.service-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.service-overview {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.service-overview p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.service-benefits {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 10px;
+    margin-bottom: 4rem;
+}
+
+.service-benefits h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.service-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-benefits li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.service-benefits li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.service-flow {
+    margin-bottom: 4rem;
+}
+
+.flow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.flow-step {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.flow-step h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+/* AR活用事例 */
+.ar-examples {
+    margin-bottom: 4rem;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.example-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.example-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.example-card:hover img {
+    transform: scale(1.05);
+}
+
+.example-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 1.5rem;
+    font-weight: 300;
+}
+
+.example-card p {
+    color: var(--text-color);
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ドキュメントページ */
+.document-section {
+    padding-top: 120px;
+    padding-bottom: 5rem;
+}
+
+.document-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.document-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.document-category {
+    margin-bottom: 4rem;
+}
+
+.document-category h2 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.document-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+}
+
+.document-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.document-content {
+    padding: 1.5rem;
+}
+
+.document-content h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.document-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ドキュメントページのレイアウト */
+.doc-container {
+    display: flex;
+    min-height: calc(100vh - 60px);
+    margin-top: 60px;
+}
+
+.doc-sidebar {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.doc-nav {
+    padding: 2rem 0;
+}
+
+.doc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.doc-nav > ul {
+    padding: 0 1.5rem;
+}
+
+.nav-section {
+    margin: 1.5rem 0;
+}
+
+.nav-section span {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.nav-section ul {
+    padding-left: 1rem;
+}
+
+.doc-nav a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.doc-nav a:hover {
+    opacity: 1;
+}
+
+.doc-nav li.active > a {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.doc-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 3rem 4rem;
+    max-width: calc(100% - 280px);
+}
+
+/* ドキュメントセクションのスタイル */
+.doc-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.doc-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.doc-section h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.doc-content-inner {
+    max-width: 800px;
+}
+
+.doc-content-inner h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-align: left;
+}
+
+.doc-content-inner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.overview-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+}
+
+.overview-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.overview-content {
+    padding: 1.5rem;
+}
+
+.overview-content h2 {
+    font-size: 1.4rem;
+    margin: 0 0 1rem;
+    text-align: left;
+}
+
+.doc-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.doc-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* コードブロック */
+.code-block {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-block code {
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+    color: #e6e6e6;
+}
+
+/* デザインシステムのデモ要素 */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.color-item {
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.color-item span {
+    color: var(--background-color);
+    font-weight: 500;
+}
+
+.typography-sample {
+    margin: 2rem 0;
+}
+
+.component-demo {
+    margin: 1rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -695,5 +1212,19 @@ h2 {
     
     .nav-links {
         display: none;
+    }
+
+    .service-hero h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .service-content {
+        padding: 2rem 1rem;
+    }
+
+    .service-benefits {
+        padding: 2rem 1rem;
     }
 }
