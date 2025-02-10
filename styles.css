@@ -604,15 +604,27 @@ a.service-card {
     max-width: 900px;
     margin: 0 auto;
     justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.community-grid.secondary-grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin-top: 4rem;
 }
 
 .community-card {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 4/3;
     text-decoration: none;
     display: block;
+    height: 300px;
+}
+
+.community-grid.secondary-grid .community-card {
+    height: 400px;
 }
 
 .community-card img {
@@ -671,7 +683,7 @@ a.service-card {
 
 .community-hover-content h4 {
     color: var(--primary-color);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 1rem;
 }
