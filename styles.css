@@ -638,7 +638,9 @@ a.service-card {
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .community-overlay h3 {
@@ -646,35 +648,48 @@ a.service-card {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0;
+    transition: opacity 0.3s ease;
 }
 
 .community-hover-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
     text-align: center;
-    width: 100%;
-    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
 .community-hover-content h4 {
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .community-hover-content p {
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 1rem;
     opacity: 0.9;
+}
+
+.community-card:hover .community-overlay {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .community-card:hover .community-hover-content {
     opacity: 1;
+    visibility: visible;
 }
 
 .community-description {
