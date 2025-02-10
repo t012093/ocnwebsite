@@ -463,8 +463,10 @@ a.service-card {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
 }
 
 .vision-content p {
@@ -474,6 +476,27 @@ a.service-card {
     font-style: normal;
     font-size: 1.4rem;
     line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .vision-slider {
+        height: 70vh;
+    }
+
+    .vision-slide {
+        background-position: center center;
+    }
+
+    .vision-content {
+        padding: 1.5rem;
+        width: 95%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .vision-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
 }
 
 /* お問い合わせ */
@@ -594,24 +617,28 @@ a.service-card {
 /* コミュニティー */
 .community {
     background-color: var(--background-color);
-    padding: 5rem 2rem;
+    padding: 5rem 1rem;
 }
 
 .community-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(250px, 400px));
     gap: 4rem;
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     justify-content: center;
     margin-bottom: 4rem;
+    padding: 0;
 }
 
 .community-grid.secondary-grid {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 3rem;
+    width: 100%;
     max-width: 1200px;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    padding: 0;
 }
 
 .community-card {
@@ -620,11 +647,60 @@ a.service-card {
     overflow: hidden;
     text-decoration: none;
     display: block;
-    height: 300px;
+    height: 200px;
 }
 
 .community-grid.secondary-grid .community-card {
     height: 400px;
+}
+
+@media (max-width: 1024px) {
+    .community-grid.secondary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .community {
+        padding: 3rem 1rem;
+    }
+    
+    .community-grid,
+    .community-grid.secondary-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .community-grid.secondary-grid .community-card {
+        height: 300px;
+        width: 100%;
+    }
+
+    .community-overlay {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .community-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    .community-hover-content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .community-hover-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .community-hover-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
 }
 
 .community-card img {
@@ -1226,11 +1302,12 @@ a.service-card {
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-content p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     
     .image-grid {
