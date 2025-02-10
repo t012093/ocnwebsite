@@ -8,22 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
         container.scrollLeft += e.deltaY;
     });
 
-    // コミュニティーカードのオーバーレイ制御
+    // コミュニティーカードのホバー効果
     const communityCards = document.querySelectorAll('.community-card');
     
     communityCards.forEach(card => {
         const overlay = card.querySelector('.community-overlay');
+        const hoverContent = card.querySelector('.community-hover-content');
         
-        // デフォルトで表示
-        overlay.style.opacity = '1';
-        
-        // ホバー時の挙動
         card.addEventListener('mouseenter', () => {
             overlay.style.opacity = '0';
+            setTimeout(() => {
+                hoverContent.style.opacity = '1';
+            }, 250); // オーバーレイが消えた後に新しいコンテンツを表示
         });
         
         card.addEventListener('mouseleave', () => {
-            overlay.style.opacity = '1';
+            hoverContent.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 250); // ホバーコンテンツが消えた後にオーバーレイを表示
         });
     });
 });

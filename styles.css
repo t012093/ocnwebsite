@@ -592,17 +592,20 @@ h2 {
 
 .community-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, minmax(250px, 400px));
+    gap: 4rem;
+    max-width: 900px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .community-card {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
+    text-decoration: none;
+    display: block;
 }
 
 .community-card img {
@@ -636,6 +639,35 @@ h2 {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0;
+}
+
+.community-hover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.community-hover-content h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+}
+
+.community-hover-content p {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.community-card:hover .community-hover-content {
+    opacity: 1;
 }
 
 .community-description {
