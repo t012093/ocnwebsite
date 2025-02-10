@@ -369,6 +369,455 @@ body {
     margin: 0;
 }
 
+/* 技術基盤グリッド */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.tech-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.tech-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-item ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+.tech-item ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* 実装情報のスタイル */
+.implementation-info {
+    margin: 2rem 0;
+}
+
+.implementation-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    position: relative;
+}
+
+.step h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.step ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+.step ul li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+/* アクティビティグリッド */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.activity-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.activity-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.activity-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-item ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+.activity-item ul li::before {
+    content: "✧";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* ギャラリースタイル */
+.gallery-filters {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-overlay p {
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 寄付者特典スタイル */
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.reward-tier {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.reward-tier:hover {
+    transform: translateY(-10px);
+}
+
+.reward-tier.featured {
+    background: linear-gradient(145deg, rgba(74, 144, 226, 0.1), rgba(74, 144, 226, 0.05));
+    border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.reward-tier.featured::before {
+    content: "人気";
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 3rem;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+}
+
+.reward-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reward-header h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.reward-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.reward-features li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.reward-features li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.reward-button {
+    display: block;
+    text-align: center;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.reward-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.rewards-note {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.rewards-note h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sustainable-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.sustainable-benefits li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.sustainable-benefits li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.benefit-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.benefit-desc {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.corporate-support {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.corporate-support h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.corporate-support a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.corporate-support a:hover {
+    opacity: 0.8;
+}
+
+/* パートナーシップ特典スタイル */
+.community-benefits,
+.partnership-benefits {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-item ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.benefit-item ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* 導入事例スタイル */
+.success-stories {
+    margin-top: 4rem;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.story-item {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.story-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.story-item h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.story-item p {
+    opacity: 0.9;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 1024px) {
     .doc-sidebar {
