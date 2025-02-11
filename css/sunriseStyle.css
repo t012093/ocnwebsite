@@ -131,7 +131,7 @@ body {
     padding: 3rem 4rem;
     max-width: 800px;
     width: 90%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
 }
 
 .hero-content h1 {
@@ -336,7 +336,7 @@ h2 {
 
 .community-grid:last-child .community-card:last-child .community-overlay h3,
 .community-grid:last-child .community-card:last-child .community-hover-content h4 {
-    color: var(--coral-pink);
+    color: wheat;
 }
 
 .community-grid.secondary-grid {
@@ -369,7 +369,7 @@ h2 {
 .community-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    background: linear-gradient(to bottom, rgba(148, 95, 95, 0.654), rgba(255, 255, 255, 0));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,7 +377,7 @@ h2 {
 }
 
 .community-overlay h3 {
-    color: var(--coral-pink);
+    color: wheat;
     font-size: 1.5rem;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
@@ -386,7 +386,7 @@ h2 {
 .community-hover-content {
     position: absolute;
     inset: 0;
-    background: var(--overlay-light);
+    background: rgba(130, 120, 120, 0.044);
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -394,17 +394,18 @@ h2 {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
 }
 
 .community-hover-content h4 {
-    color: var(--coral-pink);
+    color: wheat;
     font-size: 1.2rem;
     text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
     margin-bottom: 1rem;
 }
 
 .community-hover-content p {
-    color: var(--coral-pink);
+    color: wheat;
     font-size: 1rem;
     text-align: center;
     opacity: 0.9;
@@ -476,9 +477,9 @@ h2 {
 
 .vision-content p {
     font-size: 1.4rem;
-    color: var(--white);
+    color: var(--coral-pink);
     line-height: 1.8;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(204, 141, 141, 0.5);
 }
 
 /* Contact Form */
