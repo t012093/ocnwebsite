@@ -467,7 +467,7 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.388);
     padding: 3rem;
     border-radius: 15px;
     width: 90%;
@@ -552,12 +552,33 @@ h2 {
 }
 
 .footer-links a {
-    color: var(--text-dark);
+    color: var(--coral-pink);
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-content p {
     color: var(--coral-pink);
+    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-info p {
+    color: var(--coral-pink);
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    color: var(--coral-pink);
+    opacity: 0.9;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
 }
