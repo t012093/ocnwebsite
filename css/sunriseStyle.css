@@ -73,9 +73,13 @@ body {
     align-items: center;
 }
 
-.logo img {
-    height: 40px;
-    width: auto;
+.logo-text {
+    color: var(--coral-pink);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(255, 127, 80, 0.2);
 }
 
 .nav-links {
@@ -514,7 +518,7 @@ h2 {
 .contact-form button {
     width: 100%;
     padding: 1rem;
-    background: var(--coral-pink);
+    background: rgb(255, 156, 114);
     color: var(--white);
     border: none;
     border-radius: 8px;
