@@ -952,6 +952,130 @@ a.service-card {
     font-size: 1.1rem;
 }
 
+/* AR体験セクション */
+.ar-experience-cta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+}
+
+.ar-experience-cta h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.ar-demo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.ar-phone-preview {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+.ar-phone-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.ar-action {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ar-demo-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--accent-color), #2C3E50);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.ar-demo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.button-note {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 0.5rem;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.ar-instructions {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.ar-instructions h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.ar-instructions ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--text-color);
+}
+
+.ar-instructions li {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .ar-demo-container {
+        flex-direction: column;
+    }
+
+    .ar-phone-preview, .ar-action {
+        max-width: 100%;
+    }
+
+    .ar-experience-cta {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .ar-experience-cta h2 {
+        font-size: 1.5em;
+    }
+
+    .ar-demo-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1em;
+    }
+}
+
 /* AR活用事例 */
 .ar-examples {
     margin-bottom: 4rem;
