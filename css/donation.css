@@ -1,0 +1,345 @@
+/* Donation Page Specific Styles */
+.donation-page {
+    padding-top: 100px;
+    background-color: var(--bg-cream);
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.donation-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.donation-hero h1 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.donation-hero .hero-text {
+    font-size: 1.2rem;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+/* Usage Section */
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.usage-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.usage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--coral-pink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.usage-item:hover {
+    transform: translateY(-5px);
+}
+
+.usage-item:hover::before {
+    transform: scaleX(1);
+}
+
+.percentage {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--coral-pink);
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.usage-item h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.usage-item p {
+    color: var(--text-dark);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Payment Methods */
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.method-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+}
+
+.method-card h3 {
+    color: var(--coral-pink);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.method-card h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: var(--coral-pink);
+    border-radius: 2px;
+}
+
+.method-card dl {
+    margin: 1.5rem 0;
+}
+
+.method-card dt {
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-top: 1rem;
+}
+
+.method-card dd {
+    margin-left: 1rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Donation Types */
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.type-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.type-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--coral-pink), var(--coral-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+}
+
+.type-card:hover::after {
+    transform: scaleX(1);
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--coral-pink);
+    margin: 1rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+.type-card h3 {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.type-card p {
+    color: var(--text-dark);
+    opacity: 0.9;
+}
+
+.donate-button {
+    display: inline-block;
+    background: var(--coral-pink);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.donate-button:hover {
+    background: var(--coral-light);
+    transform: translateY(-2px);
+}
+
+/* Tax Benefits & Reporting */
+.tax-benefits,
+.reporting {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.tax-benefits:hover,
+.reporting:hover {
+    transform: translateY(-5px);
+}
+
+.tax-benefits h2,
+.reporting h2 {
+    color: var(--coral-pink);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tax-benefits p,
+.reporting p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.tax-benefits ul,
+.report-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tax-benefits li,
+.report-list li {
+    color: var(--text-dark);
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.8;
+}
+
+.tax-benefits li::before,
+.report-list li::before {
+    content: "•";
+    color: var(--coral-pink);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Section Headers */
+.donation-content h2 {
+    color: var(--coral-pink);
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem 0 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.donation-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--coral-pink);
+    border-radius: 2px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .donation-page {
+        padding: 80px 1rem 2rem;
+    }
+
+    .donation-hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .donation-hero h1 {
+        font-size: 2rem;
+    }
+
+    .donation-hero .hero-text {
+        font-size: 1.1rem;
+    }
+
+    .usage-grid,
+    .method-grid,
+    .type-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .percentage {
+        font-size: 1.8rem;
+    }
+}

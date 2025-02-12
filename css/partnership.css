@@ -1,0 +1,461 @@
+/* Partnership Page Styles */
+.partnership-page {
+    padding-top: 100px;
+    background-color: var(--bg-cream);
+    min-height: 100vh;
+}
+
+/* Hero Section */
+/* Hero Section */
+.partnership-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    border-radius: 15px;
+    margin: 2rem auto 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 1200px;
+    width: calc(100% - 4rem);
+}
+
+/* Pricing Section */
+.pricing-section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.pricing-table {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.plan-column {
+    flex: 1;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.plan-column:hover {
+    transform: translateY(-10px);
+}
+
+.plan-header {
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.popular-tag {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: var(--white);
+    color: var(--coral-pink);
+    padding: 0.5rem 3rem;
+    transform: rotate(45deg);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-header h2 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+    color: var(--white);
+}
+
+.plan-header .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.plan-header .description {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+}
+
+.plan-features li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.check {
+    color: var(--coral-pink);
+    font-weight: bold;
+}
+
+.cross {
+    color: #999;
+}
+
+.plan-cta {
+    display: block;
+    text-align: center;
+    background: var(--coral-pink);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0 2rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.plan-cta:hover {
+    background: var(--coral-light);
+}
+
+.pricing-note {
+    text-align: center;
+    color: var(--text-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.standard {
+    transform: translateY(-10px);
+    border: 2px solid var(--coral-pink);
+}
+
+.partnership-hero h1 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.partnership-hero .hero-text {
+    font-size: 1.2rem;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.price-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+    animation: fadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.price-info .price {
+    font-size: 1.4rem;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.price-info .note {
+    font-size: 0.9rem;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.benefit-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    padding: 1.5rem;
+    position: relative;
+}
+
+.card-header h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-list li {
+    margin-bottom: 2rem;
+}
+
+.benefit-list li:last-child {
+    margin-bottom: 0;
+}
+
+.benefit-list h3 {
+    color: var(--coral-pink);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.benefit-list h3::before {
+    content: '•';
+    color: var(--coral-pink);
+    margin-right: 0.5rem;
+    font-size: 1.4em;
+    line-height: 1;
+}
+
+.benefit-list p {
+    color: var(--text-dark);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-left: 1.5rem;
+}
+
+.sub-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+.sub-list li {
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.sub-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--coral-light);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    border-radius: 15px;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: var(--white);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--white);
+    color: var(--coral-pink);
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-column {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .standard {
+        transform: none;
+        order: -1;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .partnership-page {
+        padding-top: 80px;
+    }
+
+    .partnership-hero {
+        padding: 3rem 1.5rem;
+        margin: 1rem 1rem 2rem;
+        width: calc(100% - 2rem);
+    }
+
+    .partnership-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .pricing-section {
+        padding: 0 1rem;
+    }
+
+    .plan-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .plan-header .price {
+        font-size: 1.8rem;
+    }
+
+    .feature-name {
+        font-size: 0.9rem;
+    }
+
+    .benefits-grid {
+        padding: 0 1rem;
+    }
+
+    .card-header {
+        padding: 1.2rem;
+    }
+
+    .card-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .highlight {
+        font-size: 0.8rem;
+        top: 0.8rem;
+        right: 0.8rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .benefit-list h3 {
+        font-size: 1.1rem;
+    }
+
+    .benefit-list p {
+        font-size: 0.95rem;
+    }
+
+    .sub-list {
+        padding-left: 1rem;
+    }
+
+    .sub-list li {
+        font-size: 0.9rem;
+    }
+
+    .cta-section {
+        padding: 3rem 1.5rem;
+        margin-top: 2rem;
+    }
+}

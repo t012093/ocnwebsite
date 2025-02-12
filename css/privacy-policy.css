@@ -1,0 +1,146 @@
+/* Privacy Policy Styles */
+:root {
+    --bg-white: #FFFFFF;
+    --text-dark: #333333;
+    --accent-coral: #FF7F50;
+    --gray-light: #F5F5F5;
+    --gray-medium: #E0E0E0;
+    --shadow-soft: rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.header {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px var(--shadow-soft);
+}
+
+.nav-links a {
+    color: var(--text-dark);
+}
+
+.nav-links a:hover {
+    color: var(--accent-coral);
+}
+
+.document-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+}
+
+/* タイトルスタイル */
+h1 {
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* セクションスタイル */
+.document-container section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: var(--gray-light);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px var(--shadow-soft);
+    transition: transform 0.2s ease;
+}
+
+.document-container section:hover {
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-coral);
+}
+
+/* リストスタイル */
+.document-container ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.document-container ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.document-container ul li::before {
+    content: "•";
+    color: var(--accent-coral);
+    position: absolute;
+    left: 0;
+}
+
+/* 日付スタイル */
+.policy-date {
+    margin-top: 4rem;
+    text-align: right;
+    font-style: italic;
+    color: var(--text-dark);
+    opacity: 0.7;
+}
+
+/* お問い合わせ情報 */
+blockquote {
+    background: var(--gray-light);
+    margin: 2rem 0;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-coral);
+}
+
+blockquote p {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+/* フッター */
+.footer {
+    background-color: var(--gray-light);
+    color: var(--text-dark);
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+}
+
+.footer-info h3,
+.footer-info p,
+.footer-links a {
+    color: var(--text-dark);
+}
+
+.footer-links a:hover {
+    color: var(--accent-coral);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .document-container {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .document-container section {
+        padding: 1.5rem;
+    }
+
+    blockquote {
+        padding: 1.5rem;
+    }
+}
