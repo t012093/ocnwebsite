@@ -536,6 +536,306 @@
                 </div>
             </section>
 
+            <!-- 開発者リソース -->
+            <section id="dev-resources" class="doc-section">
+                <h1>開発者リソース</h1>
+                <div class="doc-content-inner">
+                    <p>Open Coral Networkのプラットフォームを活用した開発に必要なリソースをご提供しています。</p>
+
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <img src="../images/coral111.png" alt="SDKとツール">
+                            <div class="overview-content">
+                                <h2>SDKとツール</h2>
+                                <ul>
+                                    <li>OCN Core SDK（iOS/Android/Web）</li>
+                                    <li>ARフレームワーク</li>
+                                    <li>データ分析ツール</li>
+                                    <li>テストツール一式</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <img src="../images/coral222.png" alt="開発ガイド">
+                            <div class="overview-content">
+                                <h2>開発ガイド</h2>
+                                <ul>
+                                    <li>クイックスタートガイド</li>
+                                    <li>API リファレンス</li>
+                                    <li>サンプルコード集</li>
+                                    <li>ベストプラクティス</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <img src="../images/coral233.png" alt="サポートリソース">
+                            <div class="overview-content">
+                                <h2>サポートリソース</h2>
+                                <ul>
+                                    <li>トラブルシューティング</li>
+                                    <li>パフォーマンス最適化</li>
+                                    <li>セキュリティガイドライン</li>
+                                    <li>開発者フォーラム</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>開発環境のセットアップ</h2>
+                    <div class="setup-steps">
+                        <div class="step">
+                            <h3>1. SDK のインストール</h3>
+                            <pre><code>npm install @ocn/sdk
+# または
+yarn add @ocn/sdk</code></pre>
+                        </div>
+                        <div class="step">
+                            <h3>2. 認証設定</h3>
+                            <pre><code>const ocn = new OCN({
+  apiKey: 'your-api-key',
+  projectId: 'your-project-id'
+});</code></pre>
+                        </div>
+                        <div class="step">
+                            <h3>3. 基本的な使用例</h3>
+                            <pre><code>// ARコンテンツの作成
+const arContent = await ocn.ar.createContent({
+  type: 'model',
+  source: 'path/to/model.glb',
+  position: { x: 0, y: 0, z: 0 }
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <h2>APIの概要</h2>
+                    <div class="api-overview">
+                        <div class="api-section">
+                            <h3>認証API</h3>
+                            <ul>
+                                <li>OAuth 2.0認証フロー</li>
+                                <li>APIキー管理</li>
+                                <li>アクセストークンの更新</li>
+                            </ul>
+                        </div>
+                        <div class="api-section">
+                            <h3>コンテンツAPI</h3>
+                            <ul>
+                                <li>3Dモデルの管理</li>
+                                <li>AR体験の作成</li>
+                                <li>インタラクション設定</li>
+                            </ul>
+                        </div>
+                        <div class="api-section">
+                            <h3>データAPI</h3>
+                            <ul>
+                                <li>分析データの取得</li>
+                                <li>ユーザー行動の追跡</li>
+                                <li>カスタムイベント</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 開発者コミュニティ -->
+            <!-- DXロードマップ -->
+            <section id="dx-roadmap" class="doc-section">
+                <h1>DXロードマップ</h1>
+                <div class="doc-content-inner">
+                    <div class="roadmap-container">
+                        <div class="roadmap-header">
+                            <h2>保育アプリ開発スケジュール</h2>
+                        </div>
+                        <div class="roadmap-section">
+                            <h3>統合スケジュール概要</h3>
+                            <div class="gantt-container">
+                                <div class="mermaid">
+                                gantt
+                    title 保育アプリ開発・営業スケジュール
+                    dateFormat  YYYY-MM-DD
+                    axisFormat  %Y-%m
+                    
+                    section 開発フェーズ
+                    主要機能の完成          :2025-01-20, 1d
+                    UI調整とテスト         :2025-01-21, 2025-01-31
+                    Androidアプリ開発      :2025-01-20, 2025-02-10
+                    Androidテスト・リリース :2025-02-10, 2025-02-28
+                    iOSアプリ開発          :2025-02-11, 2025-04-01
+                    iOSテスト・リリース    :2025-04-01, 2025-04-15
+                    サイト完成・施設検索実装 :2025-04-01, 2025-04-30
+
+                    section 営業・組織フェーズ
+                    保育系NPO・公営施設ヒアリング :2025-02-01, 2025-03-31
+                    法人設立準備          :2025-02-01, 2025-04-30
+                    法人設立             :2025-05-01, 2025-05-31
+                    自治体営業           :2025-06-01, 2025-06-30
+                    デジポック富山応札    :2025-05-01, 2025-06-30
+                    子ども家庭庁AI実証応札 :2025-05-01, 2025-06-30
+                    プロジェクト実施期間   :2025-07-01, 2026-03-31
+                    助成金申請準備        :2026-03-01, 2026-04-30
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-section">
+                            <h3>開発マイルストーン</h3>
+                            <table class="milestone-table">
+                                <thead>
+                                    <tr>
+                                        <th>時期</th>
+                                        <th>マイルストーン</th>
+                                        <th>詳細</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2025年1月20日</td>
+                                        <td>主要機能完成</td>
+                                        <td>・コア機能の実装完了<br>・基本的なユーザーフロー確立</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025年1月31日</td>
+                                        <td>UI調整・テスト完了</td>
+                                        <td>・ユーザビリティテスト実施<br>・バグ修正と性能最適化</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025年2月末</td>
+                                        <td>Android版リリース</td>
+                                        <td>・Play Storeへの申請<br>・初期ユーザーフィードバック収集</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025年4月中旬</td>
+                                        <td>iOS版リリース</td>
+                                        <td>・App Storeへの申請<br>・クロスプラットフォーム対応完了</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="roadmap-section">
+                            <h3>献立AIアプリ開発スケジュール（案）</h3>
+                            <div class="gantt-container">
+                                <div class="mermaid">
+                                gantt
+                    title 献立AIアプリ開発スケジュール
+                    dateFormat  YYYY-MM-DD
+                    axisFormat  %Y-%m
+                    
+                    section 開発フェーズ
+                    AI学習モデル開発       :2025-02-01, 2025-03-31
+                    バックエンド開発       :2025-03-01, 2025-04-15
+                    UI/UXデザイン         :2025-03-15, 2025-04-30
+                    フロントエンド開発     :2025-04-01, 2025-05-15
+                    テスト・最適化        :2025-05-15, 2025-06-15
+                    アプリリリース        :2025-06-15, 2025-06-30
+
+                    section 運用フェーズ
+                    ベータテスト         :2025-07-01, 2025-08-31
+                    機能改善・拡張       :2025-09-01, 2025-12-31
+                    データ収集・分析     :2025-07-01, 2025-12-31
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-section">
+                            <h3>リスク管理</h3>
+                            <ul class="risk-list">
+                                <li>開発リソースが限られているため、優先順位の明確化が重要</li>
+                                <li>Android版とiOS版の開発を段階的に行うことでリソースの効率的な活用を図る</li>
+                                <li>法人設立と並行して営業活動を行うため、スケジュール管理が重要</li>
+                                <li>両アプリの開発を並行して進めるため、チーム間の連携とリソース配分の最適化が必要</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dev-community" class="doc-section">
+                <h1>開発者コミュニティ</h1>
+                <div class="doc-content-inner">
+                    <p>Open Coral Networkの開発者コミュニティに参加して、知識の共有や技術的な議論に参加しましょう。</p>
+
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <img src="../images/coral333.png" alt="コミュニケーション">
+                            <div class="overview-content">
+                                <h2>コミュニケーション</h2>
+                                <ul>
+                                    <li>Discordコミュニティ</li>
+                                    <li>開発者フォーラム</li>
+                                    <li>技術ブログ</li>
+                                    <li>定期ミートアップ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <img src="../images/coral343.png" alt="イベント">
+                            <div class="overview-content">
+                                <h2>イベント</h2>
+                                <ul>
+                                    <li>ハッカソン</li>
+                                    <li>開発者カンファレンス</li>
+                                    <li>技術勉強会</li>
+                                    <li>コードラボ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <img src="../images/coral345.png" alt="コントリビューション">
+                            <div class="overview-content">
+                                <h2>コントリビューション</h2>
+                                <ul>
+                                    <li>オープンソースプロジェクト</li>
+                                    <li>バグ報告</li>
+                                    <li>機能リクエスト</li>
+                                    <li>ドキュメント改善</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>コミュニティガイドライン</h2>
+                    <div class="community-guidelines">
+                        <div class="guideline-section">
+                            <h3>行動規範</h3>
+                            <ul>
+                                <li>互いを尊重し、建設的なコミュニケーションを心がける</li>
+                                <li>技術的な議論は歓迎、個人攻撃は禁止</li>
+                                <li>多様性を認め、包括的なコミュニティを目指す</li>
+                            </ul>
+                        </div>
+                        <div class="guideline-section">
+                            <h3>コントリビューション</h3>
+                            <ul>
+                                <li>コードの品質基準を遵守</li>
+                                <li>適切なドキュメントを作成</li>
+                                <li>テストを含めた提出を推奨</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>開発者プログラム</h2>
+                    <div class="developer-programs">
+                        <div class="program-card">
+                            <h3>スタートアッププログラム</h3>
+                            <ul>
+                                <li>技術メンタリング</li>
+                                <li>クラウドクレジット</li>
+                                <li>マーケティングサポート</li>
+                            </ul>
+                        </div>
+                        <div class="program-card">
+                            <h3>エキスパートプログラム</h3>
+                            <ul>
+                                <li>早期アクセス機能</li>
+                                <li>専門家認定</li>
+                                <li>登壇機会の提供</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 法人パートナーシップ -->
             <section id="business-partnership" class="doc-section">
                 <h1>法人パートナーシップ</h1>
