@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/dx-roadmap.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header class="header">
@@ -31,113 +30,124 @@
     <main class="roadmap-container">
         <h1>DXロードマップ</h1>
 
-        <!-- プロジェクト概要 -->
-        <section class="project-overview">
-            <h2>プロジェクト概要</h2>
-            <div class="project-cards">
-                <div class="project-card">
-                    <h3>保育アプリ開発</h3>
-                    <p>保育施設のDX化を支援するアプリケーションの開発</p>
-                    <ul>
-                        <li>Android/iOSアプリ開発</li>
-                        <li>施設検索システム実装</li>
-                        <li>保育関連機能の統合</li>
-                    </ul>
+        <!-- ガントチャートセクション -->
+        <section class="gantt-section">
+            <div class="gantt-wrapper">
+                <div class="gantt-header">
+                    <div class="gantt-header-title">プロジェクトロードマップ</div>
+                    <div class="gantt-header-months" id="gantt-months"></div>
                 </div>
-                <div class="project-card">
-                    <h3>献立AIアプリ開発</h3>
-                    <p>AI技術を活用した献立提案システムの開発</p>
-                    <ul>
-                        <li>AI学習モデルの開発</li>
-                        <li>レシピデータベースの構築</li>
-                        <li>ユーザー向けインターフェース開発</li>
-                    </ul>
+                <div class="gantt-body" id="gantt-body">
+                    <!-- JavaScriptで動的に生成 -->
                 </div>
-            </div>
-        </section>
-
-        <!-- 開発フェーズのタイムライン -->
-        <section class="timeline-section">
-            <h2>開発フェーズ</h2>
-            <div class="timeline-container">
-                <div class="timeline" id="development-timeline"></div>
             </div>
         </section>
 
         <!-- マイルストーン -->
         <section class="milestones-section">
             <h2>主要マイルストーン</h2>
-            <div class="milestone-cards">
-                <div class="milestone-card">
-                    <div class="milestone-date">2025年1月20日</div>
-                    <h3>主要機能完成</h3>
-                    <ul>
-                        <li>コア機能の実装完了</li>
-                        <li>基本的なユーザーフロー確立</li>
-                    </ul>
+            <div class="milestone-timeline">
+                <div class="milestone-phase">
+                    <h3>開発フェーズ</h3>
+                    <div class="milestone-points">
+                        <div class="milestone-point">
+                            <div class="milestone-date">2025/01/20</div>
+                            <div class="milestone-content">
+                                <h4>主要機能完成</h4>
+                                <p>コア機能の実装完了</p>
+                            </div>
+                        </div>
+                        <div class="milestone-point">
+                            <div class="milestone-date">2025/02/28</div>
+                            <div class="milestone-content">
+                                <h4>Android版リリース</h4>
+                                <p>Play Store公開</p>
+                            </div>
+                        </div>
+                        <div class="milestone-point">
+                            <div class="milestone-date">2025/04/15</div>
+                            <div class="milestone-content">
+                                <h4>iOS版リリース</h4>
+                                <p>App Store公開</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="milestone-card">
-                    <div class="milestone-date">2025年2月末</div>
-                    <h3>Android版リリース</h3>
-                    <ul>
-                        <li>Play Store申請</li>
-                        <li>初期ユーザーフィードバック</li>
-                    </ul>
-                </div>
-                <div class="milestone-card">
-                    <div class="milestone-date">2025年4月中旬</div>
-                    <h3>iOS版リリース</h3>
-                    <ul>
-                        <li>App Store申請</li>
-                        <li>クロスプラットフォーム対応</li>
-                    </ul>
-                </div>
-                <div class="milestone-card">
-                    <div class="milestone-date">2025年6月末</div>
-                    <h3>献立AIアプリリリース</h3>
-                    <ul>
-                        <li>AI機能の本格展開</li>
-                        <li>ユーザーテスト完了</li>
-                    </ul>
+                <div class="milestone-phase">
+                    <h3>営業・組織フェーズ</h3>
+                    <div class="milestone-points">
+                        <div class="milestone-point">
+                            <div class="milestone-date">2025/05/31</div>
+                            <div class="milestone-content">
+                                <h4>法人設立</h4>
+                                <p>組織体制の確立</p>
+                            </div>
+                        </div>
+                        <div class="milestone-point">
+                            <div class="milestone-date">2025/06/30</div>
+                            <div class="milestone-content">
+                                <h4>実証事業応札</h4>
+                                <p>自治体連携開始</p>
+                            </div>
+                        </div>
+                        <div class="milestone-point">
+                            <div class="milestone-date">2026/03/31</div>
+                            <div class="milestone-content">
+                                <h4>プロジェクト完了</h4>
+                                <p>実証結果の評価</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 進捗チャート -->
-        <section class="progress-section">
-            <h2>プロジェクト進捗</h2>
-            <div class="chart-container">
-                <canvas id="progressChart"></canvas>
+        <!-- プロジェクト詳細 -->
+        <section class="project-details">
+            <div class="project-card">
+                <h3>保育アプリ開発</h3>
+                <div class="status-container">
+                    <div class="status-bar">
+                        <div class="status-progress" style="width: 45%"></div>
+                    </div>
+                    <span class="status-text">進捗率: 45%</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h4>現在のフェーズ</h4>
+                        <p>Android版開発</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>次のマイルストーン</h4>
+                        <p>iOS版開発開始</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>リスク状態</h4>
+                        <p class="status-low">低</p>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <!-- リスク管理 -->
-        <section class="risk-section">
-            <h2>リスク管理</h2>
-            <div class="risk-cards">
-                <div class="risk-card">
-                    <h3>開発リスク</h3>
-                    <ul>
-                        <li>リソース配分の最適化が必要</li>
-                        <li>技術的な課題への対応</li>
-                        <li>品質管理の徹底</li>
-                    </ul>
+            <div class="project-card">
+                <h3>献立AIアプリ開発</h3>
+                <div class="status-container">
+                    <div class="status-bar">
+                        <div class="status-progress" style="width: 30%"></div>
+                    </div>
+                    <span class="status-text">進捗率: 30%</span>
                 </div>
-                <div class="risk-card">
-                    <h3>スケジュールリスク</h3>
-                    <ul>
-                        <li>マイルストーンの遅延対策</li>
-                        <li>並行開発の管理</li>
-                        <li>外部依存の最小化</li>
-                    </ul>
-                </div>
-                <div class="risk-card">
-                    <h3>運用リスク</h3>
-                    <ul>
-                        <li>ユーザーフィードバックの反映</li>
-                        <li>パフォーマンス監視</li>
-                        <li>セキュリティ対策</li>
-                    </ul>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h4>現在のフェーズ</h4>
+                        <p>AI学習モデル開発</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>次のマイルストーン</h4>
+                        <p>バックエンド開発</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>リスク状態</h4>
+                        <p class="status-medium">中</p>
+                    </div>
                 </div>
             </div>
         </section>

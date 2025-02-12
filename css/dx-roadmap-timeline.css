@@ -1,0 +1,324 @@
+/* 基本設定 */
+:root {
+    --coral-pink: #FF7F50;
+    --coral-light: #FFA07A;
+    --bg-cream: #FFF5EE;
+    --text-dark: #333333;
+    --white: #FFFFFF;
+    --overlay-light: rgba(255, 255, 255, 0.95);
+    --overlay-gradient: linear-gradient(to right, rgba(255, 127, 80, 0.05), rgba(255, 160, 122, 0.05));
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+}
+
+/* ヘッダー */
+.header {
+    background: var(--bg-cream);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--coral-pink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* タイムライン */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    background: var(--coral-pink);
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:nth-child(even) .timeline-item-content {
+    float: right;
+    padding: 0 0 0 2rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+    text-align: right;
+    padding: 0 2rem 0 0;
+}
+
+.timeline-item-content {
+    position: relative;
+    width: 50%;
+    padding: 0 2rem;
+}
+
+.timeline-item-content .tag {
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tag.development {
+    background-color: var(--success-color);
+}
+
+.tag.business {
+    background-color: var(--warning-color);
+}
+
+.timeline-item-content time {
+    color: var(--coral-pink);
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(230, 170, 170, 0.3);
+}
+
+.timeline-item-content p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.timeline-item-content .circle {
+    background: var(--coral-pink);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-item:nth-child(even) .timeline-item-content .circle {
+    right: auto;
+    left: -8px;
+}
+
+/* プロジェクト概要カード */
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.progress {
+    height: 0.8rem;
+    border-radius: 0.4rem;
+    background-color: var(--bg-cream);
+}
+
+.progress-bar {
+    background-color: var(--coral-pink);
+}
+
+.bg-info {
+    background-color: var(--coral-light) !important;
+}
+
+/* リスクカード */
+.risk-card {
+    border-top: 4px solid;
+    margin-bottom: 1rem;
+    background: var(--white);
+    border-radius: 0 0 15px 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.risk-card.low {
+    border-color: var(--success-color);
+}
+
+.risk-card.medium {
+    border-color: var(--warning-color);
+}
+
+.risk-card.high {
+    border-color: var(--danger-color);
+}
+
+.risk-level {
+    font-size: 0.9rem;
+    color: var(--coral-pink);
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(230, 170, 170, 0.3);
+}
+
+/* フッター */
+.footer {
+    background: var(--bg-cream);
+    color: var(--coral-pink);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 127, 80, 0.1);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--coral-pink);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(230, 170, 170, 0.3);
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 32px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-item-content,
+    .timeline-item:nth-child(even) .timeline-item-content {
+        float: right;
+        padding: 0 0 0 4rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .timeline-item-content .circle {
+        left: 24px;
+        right: auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+.timeline-item:nth-child(5) { animation-delay: 1.0s; }
+.timeline-item:nth-child(6) { animation-delay: 1.2s; }
+.timeline-item:nth-child(7) { animation-delay: 1.4s; }
+.timeline-item:nth-child(8) { animation-delay: 1.6s; }
+
+/* 見出し */
+h1, h2 {
+    color: var(--coral-pink);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
+}
+
+h3 {
+    color: var(--coral-pink);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
+}
+
+/* ホバーエフェクト */
+.card-body {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+.card-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 127, 80, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-body::after {
+    transform: translateX(100%);
+}

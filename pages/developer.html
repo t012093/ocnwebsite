@@ -3,149 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>開発者・個人の方向けコミュニティ | Open Coral Network</title>
+    <title>開発者コミュニティ - Open Coral Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/developer.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <a href="../index.html"><img src="../images/logo.png" alt="OCN Logo"></a>
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="OCN Logo">
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../index.html#about">NPO</a></li>
+                <li><a href="../index.html#services">Service</a></li>
+                <li><a href="../index.html#vision">Vision</a></li>
+                <li><a href="../pages/document.html">Document</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <div class="hero-slider">
-                <div class="slide">
-                    <img src="../images/coral444.png" alt="開発者コミュニティイメージ" class="hero-image">
-                    <div class="hero-content">
-                        <h1>Developer Community</h1>
-                        <p>技術とアイデアで、地域の未来を創造する</p>
-                    </div>
+    <main class="developer-container">
+        <section class="hero-section">
+            <h1>開発者コミュニティ</h1>
+            <p class="hero-description">Open Coral Networkの開発者コミュニティへようこそ。私たちと一緒に、保育のデジタル化を推進しましょう。</p>
+        </section>
+
+        <section class="resources-section">
+            <h2>開発リソース</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>API ドキュメント</h3>
+                    <p>RESTful APIの完全なドキュメント、認証方法、エンドポイントの詳細な説明を提供しています。</p>
+                    <a href="../pages/document.html" class="resource-link">詳細を見る →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🔧</div>
+                    <h3>開発者ツール</h3>
+                    <p>SDKs、ライブラリ、プラグイン、デバッグツールなど、開発に必要なツール一式を提供しています。</p>
+                    <a href="#" class="resource-link">ツールを見る →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📱</div>
+                    <h3>サンプルコード</h3>
+                    <p>一般的な実装パターンのサンプルコードとベストプラクティスを提供しています。</p>
+                    <a href="#" class="resource-link">コードを見る →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3>チュートリアル</h3>
+                    <p>ステップバイステップのガイドで、APIの基本から高度な実装まで学べます。</p>
+                    <a href="#" class="resource-link">学習を始める →</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <div class="section-content">
-                <h2>About Developer Community</h2>
-                <div class="image-grid">
-                    <img src="../images/coral555.png" alt="開発者コミュニティ">
-                    <div class="text-content">
-                        <p>Open Coral Networkの開発者コミュニティは、技術を通じて地域に貢献したい個人の方々が集まる場所です。DX、AR、AIアートなど、さまざまな分野のプロジェクトに参加できます。</p>
-                    </div>
+        <section class="community-section">
+            <h2>コミュニティに参加</h2>
+            <div class="community-cards">
+                <div class="community-card">
+                    <h3>Discord コミュニティ</h3>
+                    <p>リアルタイムで他の開発者と交流し、質問したり、アイデアを共有したりできます。</p>
+                    <a href="#" class="button">Discordに参加</a>
+                </div>
+                <div class="community-card">
+                    <h3>GitHub リポジトリ</h3>
+                    <p>オープンソースプロジェクトに貢献し、最新のコードやイシューを確認できます。</p>
+                    <a href="#" class="button">GitHubを見る</a>
                 </div>
             </div>
         </section>
 
-        <section id="benefits" class="services">
-            <h2>参加のメリット</h2>
-            <div class="business-service-grid">
-                <div class="business-service-card">
-                    <img src="../images/coral57.png" alt="技術共有">
-                    <div class="content">
-                        <h3>技術知識の共有</h3>
-                        <p>最新のDX技術、AR開発、AIアート制作などの知識やスキルを、実践的なプロジェクトを通じて習得できます。</p>
-                    </div>
+        <section class="events-section">
+            <h2>イベント</h2>
+            <div class="events-timeline">
+                <div class="event-card">
+                    <div class="event-date">2025年3月15日</div>
+                    <h3>オンラインハッカソン</h3>
+                    <p>保育×テクノロジーをテーマにした48時間のハッカソン。優秀なプロジェクトには賞金があります。</p>
+                    <a href="#" class="button">参加申込</a>
                 </div>
-                <div class="business-service-card">
-                    <img src="../images/coral100.png" alt="プロジェクト参加">
-                    <div class="content">
-                        <h3>実践的なプロジェクト参加</h3>
-                        <p>地域の課題解決に向けた実際のプロジェクトに参加し、自身のスキルを活かして社会に貢献できます。</p>
-                    </div>
+                <div class="event-card">
+                    <div class="event-date">2025年4月1日</div>
+                    <h3>開発者ミートアップ</h3>
+                    <p>月例の開発者ミートアップ。最新の開発状況の共有と技術的なディスカッションを行います。</p>
+                    <a href="#" class="button">詳細を見る</a>
                 </div>
-                <div class="business-service-card">
-                    <img src="../images/coral10.png" alt="ネットワーク">
-                    <div class="content">
-                        <h3>開発者ネットワーク</h3>
-                        <p>同じ志を持つ開発者たちとつながり、新しいアイデアやプロジェクトを生み出すきっかけを見つけられます。</p>
-                    </div>
+                <div class="event-card">
+                    <div class="event-date">2025年5月10日</div>
+                    <h3>技術勉強会</h3>
+                    <p>保育施設のDX推進に関する技術的な課題と解決策について、実例を交えて学びます。</p>
+                    <a href="#" class="button">申し込む</a>
                 </div>
             </div>
         </section>
 
-        <section id="activities" class="news">
-            <h2>活動例</h2>
-            <div class="news-slider">
-                <div class="news-slider-container">
-                    <div class="news-slide">
-                        <img src="../images/coral18.png" alt="ハッカソン">
-                        <div class="news-content">
-                            <h3>地域活性化ハッカソン</h3>
-                            <p>地域の課題をテーマにした開発イベントを定期的に開催</p>
-                        </div>
-                    </div>
-                    <div class="news-slide">
-                        <img src="../images/coral15.png" alt="勉強会">
-                        <div class="news-content">
-                            <h3>技術勉強会</h3>
-                            <p>最新技術のハンズオンワークショップやLT会を開催</p>
-                        </div>
-                    </div>
-                    <div class="news-slide">
-                        <img src="../images/coral2.png" alt="オープンソース">
-                        <div class="news-content">
-                            <h3>オープンソース開発</h3>
-                            <p>地域貢献につながるオープンソースプロジェクトの推進</p>
-                        </div>
-                    </div>
+        <section class="support-section">
+            <h2>サポート</h2>
+            <div class="support-cards">
+                <div class="support-card">
+                    <h3>技術サポート</h3>
+                    <p>開発中の技術的な課題について、専門のエンジニアが支援します。</p>
+                    <a href="#" class="button">サポートを受ける</a>
+                </div>
+                <div class="support-card">
+                    <h3>開発相談</h3>
+                    <p>プロジェクトの企画段階から、経験豊富な開発者がアドバイスを提供します。</p>
+                    <a href="#" class="button">相談する</a>
                 </div>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>コミュニティに参加する</h2>
-            <div class="community-description" style="margin-bottom: 2rem;">
-                <p>開発者コミュニティへの参加をご希望の方は、以下のフォームよりお申し込みください。</p>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="お名前" required>
-                <input type="email" placeholder="メールアドレス" required>
-                <input type="text" placeholder="GitHubアカウント（任意）">
-                <select required>
-                    <option value="">興味のある活動分野を選択してください</option>
-                    <option value="dx">DX開発</option>
-                    <option value="ar">AR/VR開発</option>
-                    <option value="ai">AIアート</option>
-                    <option value="other">その他</option>
-                </select>
-                <textarea placeholder="関心のある技術分野や、やってみたいプロジェクトについてご記入ください" required></textarea>
-                <button type="submit">参加申請を送信</button>
-            </form>
         </section>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-info">
-                <h3>NPO法人 Open Coral Network</h3>
-                <p>〒930-0981</p>
-                <p>9-15 nishishinjo Toyamash Toyama</p>
-            </div>
             <div class="footer-links">
-                <ul>
-                    <li><a href="#privacy">privacy policy</a></li>
-                    <li><a href="#terms">Terms of Use</a></li>
-                </ul>
+                <a href="../pages/terms.html">利用規約</a>
+                <a href="../pages/privacy-policy.html">プライバシーポリシー</a>
+                <a href="../pages/document.html">ドキュメント</a>
+                <a href="../index.html#contact">お問い合わせ</a>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 Coral Company. All rights reserved.</p>
+            <p class="copyright">© 2025 Open Coral Network. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="../js/script.js"></script>
 </body>
 </html>

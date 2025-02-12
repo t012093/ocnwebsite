@@ -3,6 +3,8 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
     --background-color: #f8f9fa;
     --card-background: #ffffff;
     --text-color: #333333;
@@ -18,7 +20,7 @@ body {
     color: var(--text-color);
 }
 
-/* ヘッダーのスタイル */
+/* ヘッダー */
 .header {
     background-color: var(--primary-color);
     padding: 1rem 0;
@@ -52,7 +54,7 @@ body {
     font-weight: 600;
 }
 
-/* メインコンテンツのスタイル */
+/* メインコンテナ */
 .roadmap-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -66,159 +68,217 @@ h1 {
     font-size: 2.5rem;
 }
 
-h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+/* ガントチャート */
+.gantt-section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
 }
 
-/* プロジェクト概要カード */
-.project-cards {
+.gantt-wrapper {
+    min-width: 900px;
+}
+
+.gantt-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.gantt-header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.gantt-header-months {
+    display: flex;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.month-column {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.gantt-body {
+    position: relative;
+}
+
+.gantt-row {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.gantt-row-label {
+    width: 200px;
+    padding-right: 1rem;
+    font-weight: 600;
+}
+
+.gantt-row-bars {
+    flex: 1;
+    position: relative;
+    height: 30px;
+}
+
+.gantt-bar {
+    position: absolute;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.gantt-bar:hover {
+    opacity: 1;
+}
+
+.gantt-bar-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* マイルストーン */
+.milestone-timeline {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.milestone-phase {
+    margin-bottom: 2rem;
+}
+
+.milestone-phase h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.milestone-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.milestone-point {
+    flex: 1;
+    min-width: 250px;
+    background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.milestone-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.milestone-content p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* プロジェクト詳細 */
+.project-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .project-card {
     background-color: var(--card-background);
-    padding: 2rem;
     border-radius: var(--border-radius);
+    padding: 2rem;
     box-shadow: var(--shadow);
 }
 
 .project-card h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
-.project-card ul {
-    list-style: none;
-    padding: 0;
+.status-container {
+    margin-bottom: 1.5rem;
 }
 
-.project-card li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.project-card li::before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-
-/* タイムラインのスタイル */
-.timeline-section {
-    margin: 4rem 0;
-}
-
-.timeline-container {
-    background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-/* マイルストーンカード */
-.milestone-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.milestone-card {
-    background-color: var(--card-background);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    border-top: 4px solid var(--secondary-color);
-}
-
-.milestone-date {
-    color: var(--accent-color);
-    font-weight: 600;
+.status-bar {
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
     margin-bottom: 0.5rem;
 }
 
-.milestone-card h3 {
-    margin: 0.5rem 0;
-    color: var(--primary-color);
+.status-progress {
+    height: 100%;
+    background-color: var(--success-color);
+    border-radius: 4px;
+    transition: width 0.3s ease;
 }
 
-.milestone-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
+.status-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
-.milestone-card li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.milestone-card li::before {
-    content: "✓";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-
-/* 進捗チャート */
-.progress-section {
-    margin: 4rem 0;
-}
-
-.chart-container {
-    background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    height: 400px;
-}
-
-/* リスク管理カード */
-.risk-cards {
+.details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
-.risk-card {
-    background-color: var(--card-background);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    border-left: 4px solid var(--accent-color);
+.detail-item h4 {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
 }
 
-.risk-card h3 {
-    color: var(--primary-color);
-    margin-top: 0;
+.detail-item p {
+    margin: 0;
+    font-weight: 600;
 }
 
-.risk-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
+.status-low {
+    color: var(--success-color);
 }
 
-.risk-card li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
+.status-medium {
+    color: var(--warning-color);
 }
 
-.risk-card li::before {
-    content: "!";
+.status-high {
     color: var(--accent-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
 }
 
 /* レスポンシブデザイン */
@@ -234,15 +294,19 @@ h2 {
         gap: 1rem;
     }
 
-    .project-cards, .milestone-cards, .risk-cards {
+    .gantt-section {
+        padding: 1rem;
+    }
+
+    .milestone-points {
+        flex-direction: column;
+    }
+
+    .project-details {
         grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
+    .details-grid {
+        grid-template-columns: 1fr;
     }
 }
