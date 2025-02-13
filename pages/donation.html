@@ -7,14 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sunriseStyle.css">
+
     <link rel="stylesheet" href="../css/donation.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <a href="../index.html" class="logo-text">OCN</a>
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="OCN Logo" class="logo-image">
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html#about">NPO</a></li>
@@ -28,17 +30,20 @@
 
     <main class="donation-page">
         <section class="donation-hero">
-            <h1>寄付について</h1>
-            <p class="hero-text">Open Coral Networkでは、サンゴ礁の保護活動とAR/DX技術を活用した地域活性化のため、皆様からのご支援を募っております。</p>
+            <div class="hero-content">
+                <h1>未来を創る。<br>あなたの支援が可能性を広げます。</h1>
+                <p class="hero-text">Open Coral Networkでは、サンゴ礁の保護活動とAR/DX技術を活用した地域活性化のため、皆様からのご支援を募っております。私たちと一緒に、持続可能な未来を創っていきませんか？</p>
+                <a href="#donation-form" class="cta-button">今すぐ寄付する</a>
+            </div>
         </section>
 
         <section class="donation-content">
             <div class="usage-section">
                 <h2>寄付金の使途</h2>
-                <div class="usage-grid">
+                <div class="usage-grid usage-grid-row">
                     <div class="usage-item">
-                        <h3><span class="percentage">40%</span>サンゴ礁の保護・再生活動</h3>
-                        <p>サンゴ礁の調査・モニタリング、保護区域の設定と管理、地域住民との協働プログラム</p>
+                        <h3><span class="percentage">20%</span>アーティスト支援</h3>
+                        <p>スポンサーシップ、コンペディション</p>
                     </div>
                     <div class="usage-item">
                         <h3><span class="percentage">30%</span>AR/DX技術開発と実証実験</h3>
@@ -49,7 +54,7 @@
                         <p>環境教育プログラムの実施、地域活性化イベントの開催</p>
                     </div>
                     <div class="usage-item">
-                        <h3><span class="percentage">10%</span>運営・管理費</h3>
+                        <h3><span class="percentage">30%</span>運営・管理費</h3>
                         <p>事務局運営費、広報・啓発活動、ボランティア管理・育成</p>
                     </div>
                 </div>
@@ -59,30 +64,56 @@
                 <h2>お支払い方法</h2>
                 <div class="method-grid">
                     <div class="method-card">
-                        <h3>銀行振込</h3>
-                        <dl>
-                            <dt>銀行名:</dt>
-                            <dd>〇〇銀行</dd>
-                            <dt>支店名:</dt>
-                            <dd>△△支店（XXX）</dd>
-                            <dt>口座種類:</dt>
-                            <dd>普通</dd>
-                            <dt>口座番号:</dt>
-                            <dd>XXXXXXX</dd>
-                            <dt>口座名義:</dt>
-                            <dd>Open Coral Network</dd>
-                        </dl>
+                        <h3><i class="fas fa-university"></i> 銀行振込</h3>
+                        <div class="bank-info">
+                            <dl>
+                                <dt>銀行名:</dt>
+                                <dd>〇〇銀行</dd>
+                                <dt>支店名:</dt>
+                                <dd>△△支店（XXX）</dd>
+                                <dt>口座種類:</dt>
+                                <dd>普通</dd>
+                                <dt>口座番号:</dt>
+                                <dd>XXXXXXX</dd>
+                                <dt>口座名義:</dt>
+                                <dd>Open Coral Network</dd>
+                            </dl>
+                        </div>
                     </div>
                     <div class="method-card">
-                        <h3>クレジットカード</h3>
-                        <p>以下のカードがご利用いただけます：</p>
-                        <ul>
-                            <li>VISA</li>
-                            <li>MasterCard</li>
-                            <li>JCB</li>
-                            <li>American Express</li>
-                        </ul>
-                        <a href="#donation-form" class="donate-button">オンライン寄付へ</a>
+                        <h3><i class="fas fa-credit-card"></i> クレジットカード</h3>
+                        <div class="card-content">
+                            <div class="security-info">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>安全な決済システムを採用しており、カード情報は暗号化して処理されます。</p>
+                            </div>
+                            <div class="card-support">
+                                <h4>対応カードブランド</h4>
+                                <div class="card-icons-row">
+                                    <div class="card-brand">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <span>Visa</span>
+                                    </div>
+                                    <div class="card-brand">
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <span>Mastercard</span>
+                                    </div>
+                                    <div class="card-brand">
+                                        <i class="fab fa-cc-jcb"></i>
+                                        <span>JCB</span>
+                                    </div>
+                                    <div class="card-brand">
+                                        <i class="fab fa-cc-amex"></i>
+                                        <span>AMEX</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="additional-info">
+                                <p><i class="fas fa-info-circle"></i> 分割払いやリボ払いにも対応しています</p>
+                                <p><i class="fas fa-clock"></i> 24時間365日いつでも寄付可能</p>
+                            </div>
+                            <a href="#donation-form" class="donate-button">オンライン寄付へ <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,17 +155,83 @@
 
             <div class="reporting">
                 <h2>寄付金の報告について</h2>
-                <ul class="report-list">
-                    <li>寄付金の使途は、四半期ごとにウェブサイトで公開いたします</li>
-                    <li>年次報告書でも詳細な活動報告と収支報告を行います</li>
-                    <li>定期寄付者には、毎月のニュースレターで活動の進捗をお伝えします</li>
-                </ul>
+                <div class="report-grid">
+                    <div class="report-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>四半期報告</h3>
+                        <p>寄付金の使途は、四半期ごとにウェブサイトで公開いたします</p>
+                    </div>
+                    <div class="report-item">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>年次報告書</h3>
+                        <p>年次報告書でも詳細な活動報告と収支報告を行います</p>
+                    </div>
+                    <div class="report-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>月次ニュースレター</h3>
+                        <p>定期寄付者には、毎月のニュースレターで活動の進捗をお伝えします</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="donation-form" class="donation-form-section">
+                <h2>寄付フォーム</h2>
+                <form class="donation-form">
+                    <div class="form-group">
+                        <label for="donation-type">寄付の種類</label>
+                        <select id="donation-type" required>
+                            <option value="one-time">一回寄付</option>
+                            <option value="monthly">定期寄付（毎月）</option>
+                            <option value="corporate">法人寄付</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">金額</label>
+                        <input type="number" id="amount" min="500" step="500" placeholder="1000" required>
+                        <span class="currency">円</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">応援メッセージ（任意）</label>
+                        <textarea id="message" rows="3"></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="submit-button">寄付を確定する</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 NPO法人 Open Coral Network</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>お問い合わせ</h3>
+                <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+                <a href="../index.html#contact" class="footer-link">お問い合わせフォーム</a>
+            </div>
+            <div class="footer-section">
+                <h3>SNSでフォロー</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NPO法人 Open Coral Network</p>
+        </div>
     </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 </html>
