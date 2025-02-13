@@ -1,0 +1,255 @@
+:root {
+    --coral-pink: #FF7F50;
+    --coral-light: #FFA07A;
+    --bg-cream: #FFF5EE;
+    --text-dark: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Mulish", sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ヘッダー */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-cream);
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--coral-pink);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* メインコンテンツ */
+.faq-container {
+    max-width: 1200px;
+    margin: 80px auto 2rem;
+    padding: 2rem;
+}
+
+.faq-container h1 {
+    text-align: center;
+    color: var(--coral-pink);
+    font-size: 2.5rem;
+    margin: 2rem 0 3rem;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
+}
+
+.faq-section {
+    margin-bottom: 4rem;
+    background: var(--bg-cream);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.faq-section:hover {
+    transform: translateY(-5px);
+}
+
+.faq-section h2 {
+    color: var(--coral-pink);
+    font-size: 2rem;
+    margin: 0 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--coral-light);
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.5);
+}
+
+.faq-item {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(255, 127, 80, 0.05), rgba(255, 160, 122, 0.05));
+    transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item:hover {
+    transform: translateX(10px);
+    background: linear-gradient(to right, rgba(255, 127, 80, 0.1), rgba(255, 160, 122, 0.1));
+}
+
+.faq-item h3 {
+    color: var(--coral-pink);
+    font-size: 1.3rem;
+    margin: 0 0 1.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.3);
+}
+
+.faq-item p {
+    color: var(--coral-pink);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    line-height: 1.8;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.3);
+}
+
+.faq-item ul {
+    list-style-type: disc;
+    padding-left: 2.5rem;
+    margin: 1.5rem 0;
+}
+
+.faq-item li {
+    color: var(--coral-pink);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(230, 170, 170, 0.3);
+}
+
+/* フッター */
+.footer {
+    background: var(--bg-cream);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 127, 80, 0.1);
+    width: 100%;
+}
+
+.footer p {
+    color: var(--coral-pink);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .faq-container {
+        margin-top: 70px;
+        padding: 1.5rem;
+    }
+
+    .faq-container h1 {
+        font-size: 2rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .faq-section {
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .faq-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .faq-item p,
+    .faq-item li {
+        font-size: 1rem;
+    }
+}
+
+/* プリント用スタイル */
+@media print {
+    .header, .footer {
+        display: none;
+    }
+
+    .faq-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .faq-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        margin-bottom: 2rem;
+    }
+
+    .faq-item {
+        background: none;
+        page-break-inside: avoid;
+    }
+
+    .faq-item h3,
+    .faq-item p,
+    .faq-item li {
+        text-shadow: none;
+    }
+}
