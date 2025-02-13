@@ -473,7 +473,6 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background: rgba(255, 255, 255, 0.388);
     padding: 3rem;
     border-radius: 15px;
     width: 90%;
@@ -483,7 +482,7 @@ h2 {
 
 .vision-content p {
     font-size: 1.4rem;
-    color: var(--coral-pink);
+    color: white;
     line-height: 1.8;
     text-shadow: 2px 2px 4px rgba(204, 141, 141, 0.5);
 }
