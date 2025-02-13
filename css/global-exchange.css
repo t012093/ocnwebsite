@@ -113,23 +113,262 @@
     }
 }
 
-.cta-button {
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.cta-button, .discord-button {
     display: inline-block;
-    background: var(--gradient-primary);
-    color: var(--white);
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     text-align: center;
-    max-width: 200px;
+    min-width: 180px;
+    color: var(--white);
+}
+
+.cta-button {
+    background: var(--gradient-primary);
     box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
 }
 
-.cta-button:hover {
+.discord-button {
+    background: var(--gradient-primary);
+    opacity: 0.9;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.2);
+}
+
+.cta-button:hover, .discord-button:hover {
     transform: translateY(-3px);
+    opacity: 1;
+    box-shadow: 0 6px 20px rgba(255, 127, 80, 0.3);
+}
+
+@media (max-width: 968px) {
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Community Section */
+.community-section {
+    padding: 6rem 2rem;
+    background: var(--bg-cream);
+}
+
+.goals-section {
+    margin-bottom: 6rem;
+}
+
+.goals-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.goal-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-10px);
+}
+
+.goal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.goal-card h4 {
+    color: var(--coral-pink);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.goal-card p {
+    color: var(--coral-light);
+    font-size: 1.1rem;
+}
+
+/* Roadmap */
+.roadmap-section {
+    margin-top: 4rem;
+}
+
+.roadmap-section h3 {
+    color: var(--coral-pink);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.roadmap-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .roadmap-section h3 {
+        font-size: 2rem;
+    }
+}
+
+.roadmap {
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    padding: 2rem 0;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--coral-pink), var(--coral-light));
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.roadmap-item {
+    position: relative;
+    width: 45%;
+    margin: 2rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.roadmap-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.roadmap-item:nth-child(odd) {
+    left: 0;
+}
+
+.roadmap-item:nth-child(even) {
+    left: 55%;
+}
+
+.roadmap-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.1);
+    position: relative;
+}
+
+.roadmap-content::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--coral-pink);
+    border-radius: 50%;
+    top: 50%;
+}
+
+.roadmap-item:nth-child(odd) .roadmap-content::before {
+    right: -60px;
+    transform: translateY(-50%);
+}
+
+.roadmap-item:nth-child(even) .roadmap-content::before {
+    left: -60px;
+    transform: translateY(-50%);
+}
+
+.roadmap-content h4 {
+    color: var(--coral-pink);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.roadmap-content p {
+    color: var(--coral-light);
+    margin-bottom: 1rem;
+}
+
+.roadmap-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.roadmap-content ul li {
+    color: var(--coral-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.roadmap-content ul li::before {
+    content: "•";
+    color: var(--coral-pink);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 968px) {
+    .goals-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roadmap::before {
+        left: 20px;
+    }
+
+    .roadmap-item {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
+
+    .roadmap-item:nth-child(odd),
+    .roadmap-item:nth-child(even) {
+        left: 0;
+    }
+
+    .roadmap-content::before {
+        left: -50px !important;
+    }
+}
+
+@media (max-width: 568px) {
+    .goals-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.schedule-note {
+    text-align: center;
+    color: var(--coral-light);
+    margin-top: 2rem;
+    font-style: italic;
 }
 
 /* About Section */
@@ -437,7 +676,8 @@
 
     .about-grid,
     .program-grid,
-    .join-grid {
+    .join-grid,
+    .community-grid {
         grid-template-columns: 1fr;
     }
 
@@ -448,6 +688,17 @@
     .timeline-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button, .discord-button {
+        min-width: 160px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
