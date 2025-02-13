@@ -5,7 +5,7 @@
     min-height: 100vh;
 }
 
-/* Hero Section */
+
 /* Hero Section */
 .partnership-hero {
     text-align: center;
@@ -24,7 +24,8 @@
 .pricing-section {
     max-width: 1200px;
     margin: 0 auto 4rem;
-    padding: 0 2rem;
+    padding: 2 3rem;
+    
 }
 
 .pricing-table {
@@ -32,6 +33,7 @@
     gap: 2rem;
     justify-content: center;
     margin-bottom: 2rem;
+    
 }
 
 .plan-column {
@@ -43,9 +45,11 @@
     position: relative;
     overflow: hidden;
     min-width: 280px;
+    background: rgba(71, 68, 68, 0.2);
 }
 
-.plan-column:hover {
+.plan-column:hover,
+.startup:hover {
     transform: translateY(-10px);
 }
 
@@ -214,7 +218,7 @@
 
 .benefit-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(136, 136, 136, 0.383);
 }
 
 .card-header {
@@ -355,6 +359,55 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Business Benefit Cards */
+.business-benefit-card {
+    background: #25232388;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(142, 123, 123, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--coral-light);
+}
+
+.business-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(206, 205, 205, 0.15);
+    border-color: var(--coral-pink);
+}
+
+/* Business Plan CTA Button */
+.business-plan-cta {
+    display: block;
+    width: calc(100% - 4rem);
+    margin: 0 2rem 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.business-plan-cta:hover {
+    background: var(--white);
+    color: var(--coral-pink);
+    border-color: var(--coral-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.business-plan-cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */

@@ -581,6 +581,38 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+.org-info-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: rgba(255, 127, 80, 0.1);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--coral-pink);
+    transition: all 0.3s ease;
+}
+
+.org-info-link:hover {
+    background-color: rgba(255, 127, 80, 0.2);
+    transform: translateX(5px);
+}
+
+.link-text {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.link-icon {
+    margin-left: 8px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.org-info-link:hover .link-icon {
+    transform: translateX(3px);
+}
+
 .copyright {
     color: var(--coral-pink);
     opacity: 0.9;
