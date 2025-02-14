@@ -1,0 +1,450 @@
+/* 基本設定 */
+:root {
+    --coral-pink: #FF7F50;
+    --coral-light: #FFA07A;
+    --coral-dark: #FF6347;
+    --bg-cream: #FFF5EE;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #faf0ed;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--coral-pink), var(--coral-light));
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --container-width: 1200px;
+    --section-spacing: 6rem;
+}
+
+/* リセットとベース */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+}
+
+/* コンテナ */
+.coral-intro {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.intro-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* セクションタイトル */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--coral-pink);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 6rem 0;
+    margin-bottom: var(--section-spacing);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--coral-pink);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+/* フィーチャーグリッド */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card h3 {
+    color: var(--coral-pink);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* イメージグリッド */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.image-grid-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.image-grid-item img:hover {
+    transform: scale(1.02);
+}
+
+/* フィーチャー詳細 */
+.features-details {
+    padding: var(--section-spacing) 0;
+}
+
+.feature-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.detail-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.detail-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 2rem;
+}
+
+.detail-card h3 {
+    color: var(--coral-pink);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.detail-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.detail-list {
+    list-style: none;
+}
+
+.detail-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-light);
+}
+
+.detail-list li::before {
+    content: "•";
+    color: var(--coral-pink);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* プロソーシャルメディアの特徴 */
+.benefits-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.benefit-item {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.benefit-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-icon {
+    flex-shrink: 0;
+}
+
+.benefit-icon img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-content h3 {
+    color: var(--coral-pink);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.benefit-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* FAQセクション */
+.faq-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--bg-cream);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.faq-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.faq-item h3 {
+    color: var(--coral-pink);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* CTAセクション */
+.cta-section {
+    text-align: center;
+    padding: var(--section-spacing) 0;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
+.features-summary {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--coral-pink);
+    margin-bottom: 0.5rem;
+}
+
+.summary-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ボタン */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-button {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
+}
+
+.secondary-button {
+    background: var(--white);
+    color: var(--coral-pink);
+    border: 2px solid var(--coral-pink);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.primary-button:hover {
+    box-shadow: 0 6px 20px rgba(255, 127, 80, 0.4);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+    :root {
+        --section-spacing: 4rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 0;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+
+    .feature-details-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .benefit-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .benefit-icon img {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 1.5rem;
+    }
+
+    .features-summary {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
