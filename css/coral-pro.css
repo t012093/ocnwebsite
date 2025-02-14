@@ -1,3 +1,123 @@
+:root {
+    --coral-pink: #FF7F50;
+    --coral-light: #FFA07A;
+    --bg-cream: #FFF5EE;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --container-width: 1200px;
+}
+
+/* ヘッダー */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.site-header nav {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--coral-pink);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--coral-pink);
+}
+
+/* フッター */
+.site-footer {
+    background: var(--white);
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-sm);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-company h3 {
+    color: var(--coral-pink);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--coral-pink);
+}
+
+.copyright {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+/* メインコンテンツ調整 */
+.coral-intro {
+    padding-top: 70px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* レスポンシブ設定 */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+}
+
 /* 基本設定 */
 :root {
     --coral-pink: #FF7F50;
@@ -447,4 +567,3 @@ body {
         text-align: center;
     }
 }
-
