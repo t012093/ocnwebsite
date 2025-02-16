@@ -176,7 +176,7 @@
 
 /* Features Styles */
 .features-container {
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .feature-group {
@@ -185,7 +185,7 @@
 
 .feature-group h3 {
     color: var(--coral-pink);
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--coral-light);

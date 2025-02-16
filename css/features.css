@@ -1,0 +1,136 @@
+.features {
+  padding: 6rem 2rem;
+  background: var(--bg-cream);
+}
+
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(255, 127, 80, 0.08);
+  transition: all 0.4s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(255, 127, 80, 0.12);
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-content h3 {
+  font-size: 2.4rem;
+  color: var(--coral-pink);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.feature-text {
+  margin: 0;
+}
+
+.feature-text h5 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 0;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.feature-item:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--coral-pink);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+  background: var(--coral-pink);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 4rem 1rem;
+  }
+
+  .feature-item {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .feature-content {
+    order: 2;
+  }
+
+  .feature-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .feature-text h5 {
+    font-size: 1.1rem;
+  }
+
+  .feature-text p {
+    font-size: 0.9rem;
+  }
+
+  .feature-image {
+    order: 1;
+  }
+}
