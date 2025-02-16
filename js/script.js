@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの制御
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // メニューアイテムをクリックした時にメニューを閉じる
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
     // セクション自動検出
     const pageSections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
@@ -58,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // サイドバーのアクティブ状態管理
     const docSections = document.querySelectorAll('.doc-section');
-    const navLinks = document.querySelectorAll('.doc-nav a');
+    const docNavLinks = document.querySelectorAll('.doc-nav a');
 
-    navLinks.forEach(link => {
+    docNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').substring(1);
             
@@ -73,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(targetId)?.classList.add('active');
             
             // ナビゲーションのアクティブ状態を更新
-            navLinks.forEach(navLink => {
+            docNavLinks.forEach(navLink => {
                 navLink.parentElement.classList.remove('active');
             });
             link.parentElement.classList.add('active');
