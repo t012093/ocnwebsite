@@ -104,7 +104,7 @@ body {
 
 .nav {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 1rem;
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
@@ -361,6 +361,8 @@ h2 {
 /* About Section */
 .about {
     background-color: var(--bg-cream);
+    padding: 8rem 0;
+    margin-bottom: 4rem;
 }
 
 .image-grid {
@@ -390,6 +392,10 @@ h2 {
 }
 
 /* サービス */
+.services {
+    padding: 2rem 0;
+}
+
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
