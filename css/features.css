@@ -74,7 +74,7 @@
 
 .feature-text h5 {
   font-size: 1.6rem;
-  color: var(--text-dark);
+  color: var(--coral-pink);
   font-weight: 500;
   margin: 0 0 1rem 0;
   opacity: 0.9;
@@ -84,7 +84,7 @@
 
 .feature-text p {
   font-size: 1.1rem;
-  color: var(--text-dark);
+  color: var(--coral-pink);
   margin: 0;
   opacity: 0.7;
   line-height: 1.8;
