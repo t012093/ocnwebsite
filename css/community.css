@@ -16,10 +16,11 @@
 .intro-content {
     max-width: 1000px;
     margin: 0 auto;
+    
 }
 
 .intro-content h2 {
-    color: var(--text-dark);
+    color: rgb(255, 147, 100);
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -59,7 +60,7 @@
 }
 
 .impact-report {
-    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    background: url('../images/coral1.png') center/cover no-repeat;
     padding: 2rem;
     border-radius: 15px;
     color: var(--white);
@@ -167,11 +168,29 @@
 }
 
 .plan-header {
-    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    background: url('../images/coral222.png') center/cover no-repeat;
     padding: 2rem;
     text-align: center;
     color: var(--white);
     position: relative;
+}
+
+.plan-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 127, 80, 0.9), rgba(255, 160, 122, 0.9));
+    z-index: 1;
+}
+
+.plan-header h2,
+.plan-header .price,
+.plan-header .description {
+    position: relative;
+    z-index: 2;
 }
 
 .plan-header h2 {
