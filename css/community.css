@@ -5,8 +5,8 @@
     min-height: 100vh;
 }
 
-/* Donation Intro Section */
-.donation-intro {
+/* Activities Intro Section */
+.activities-intro {
     background: var(--white);
     padding: 4rem 2rem;
     margin: 0 auto 4rem;
@@ -33,7 +33,7 @@
     color: var(--text-dark);
 }
 
-.donation-points {
+.activity-points {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -90,7 +90,7 @@
 .community-hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, var(--coral-light), var(--coral-pink));
+    background: url('../images/coral555.png') center/cover no-repeat;
     border-radius: 15px;
     margin: 2rem auto 3rem;
     position: relative;
@@ -98,6 +98,23 @@
     box-shadow: var(--shadow);
     max-width: 1200px;
     width: calc(100% - 4rem);
+}
+
+.community-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 127, 80, 0.8), rgba(255, 160, 122, 0.8));
+    z-index: 1;
+}
+
+.community-hero h1,
+.community-hero .hero-text {
+    position: relative;
+    z-index: 2;
 }
 
 .community-hero h1 {
@@ -185,7 +202,7 @@
 
 .feature-group h3 {
     color: var(--coral-pink);
-    font-size: 2.2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--coral-light);
