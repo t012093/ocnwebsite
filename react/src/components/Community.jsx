@@ -1,113 +1,95 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Community = () => {
   const communities = [
     {
-      title: '企業・NPO向け',
-      subtitle: 'パートナーシップで未来を創造',
-      description: '一緒に社会課題の解決を目指しましょう',
-      image: '/images/coral4.png',
-      link: '/business'
+      title: "Developer",
+      description: "技術者のためのコミュニティ",
+      image: "/images/coral676.png",
+      link: "/developer"
     },
     {
-      title: '地域コミュニティ向け',
-      subtitle: 'コミュニティ活動で地域に根ざす',
-      description: 'グローバルな視点と地域の力を融合し、持続可能な社会を築きましょう',
-      image: '/images/coral49.png',
-      link: '/community'
+      title: "Business",
+      description: "ビジネスパーソンのためのコミュニティ",
+      image: "/images/coral333.png",
+      link: "/business"
     },
     {
-      title: '開発者・個人向け',
-      subtitle: '技術で世界を変える',
-      description: 'あなたのアイデアを形にしましょう',
-      image: '/images/coral444.png',
-      link: '/developer'
+      title: "Creator",
+      description: "クリエイターのためのコミュニティ",
+      image: "/images/coral555.png",
+      link: "/creator"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <section id="community" className="section-padding">
-      <div className="container-custom">
+    <section className="bg-bg-dark py-section-padding">
+      <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-title"
+          transition={{ duration: 0.6 }}
+          className="text-3xl text-text-light text-center font-light tracking-wider mb-16"
         >
           Community
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-text-dark/80 max-w-2xl mx-auto mb-12"
-        >
-          企業、NPO、個人開発者など、様々な立場の方々が参加できるコミュニティです。
-          創造的なつながり、新しいローカルコミュニティに参加しませんか？
-        </motion.p>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid-auto-fit"
-        >
-          {communities.map((community) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {communities.map((community, index) => (
             <motion.a
-              key={community.title}
+              key={index}
               href={community.link}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-2xl block"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group relative overflow-hidden rounded-2xl aspect-square"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* 背景画像 */}
+              <div className="absolute inset-0">
                 <img
                   src={community.image}
                   alt={community.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                
-                <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                  <h3 className="text-xl font-semibold mb-2">{community.title}</h3>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="space-y-2"
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80" />
+              </div>
+
+              {/* コンテンツ */}
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <h3 className="text-2xl text-text-light font-light mb-2">
+                  {community.title}
+                </h3>
+                <p className="text-text-light/80">
+                  {community.description}
+                </p>
+                <div className="mt-4 flex items-center text-text-light">
+                  <span className="text-sm tracking-wider group-hover:mr-2 transition-all duration-300">
+                    View more
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 transform group-hover:translate-x-2 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <h4 className="text-lg text-coral-light">{community.subtitle}</h4>
-                    <p className="text-white/90 text-sm">{community.description}</p>
-                  </motion.div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                 </div>
+
+                {/* ホバー時のグロー効果 */}
+                <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" />
               </div>
             </motion.a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

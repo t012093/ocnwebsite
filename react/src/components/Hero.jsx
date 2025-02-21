@@ -1,80 +1,37 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-bg-dark overflow-hidden">
-      {/* 背景画像オーバーレイ */}
-      <div className="absolute inset-0 bg-bg-dark opacity-80" />
-      
+    <section className="relative h-screen overflow-hidden">
       {/* 背景画像 */}
-      <div className="relative h-full">
-        <motion.img
+      <div className="absolute inset-0">
+        <img
           src="/images/coral6.png"
-          alt="Open Coral Network"
-          className="w-full h-full object-cover mix-blend-luminosity opacity-50"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.05 }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear"
-          }}
-          style={{
-            filter: 'brightness(0.7)'
-          }}
+          alt="Hero background"
+          className="w-full h-screen object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
       </div>
 
-      {/* メインコンテンツ */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <motion.div 
-          className="text-center"
+      {/* コンテンツ */}
+      <div className="relative h-full container mx-auto px-4 flex flex-col items-center justify-center">
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-4xl lg:text-5xl text-text-light font-light text-center tracking-[0.2em] mb-6"
         >
-          <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl text-text-light font-normal"
-          >
-            Open Coral Network
-          </motion.h1>
-        </motion.div>
+          Open Coral Network
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-base md:text-lg text-text-light/90 text-center font-light tracking-wider"
+        >
+          地域と創造の交差点。ー珊瑚ネットワーク
+        </motion.p>
       </div>
-
-      {/* スクロールインジケーター */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-text-light/50 z-10"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm mb-2">Scroll</span>
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop"
-            }}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </motion.div>
-        </div>
-      </motion.div>
     </section>
   );
 };

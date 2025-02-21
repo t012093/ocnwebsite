@@ -18,7 +18,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg text-text-light/70;
+    @apply text-lg text-text-light/0;
   }
 }
 
