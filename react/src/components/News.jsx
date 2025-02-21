@@ -1,146 +1,192 @@
-import { motion } from 'framer-motion';
-import { useSpring, animated } from 'react-spring';
-import { useGesture } from '@use-gesture/react';
-import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const News = () => {
-  const newsItems = [
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.6]);
+
+  const news = [
     {
-      date: "2024.01",
-      title: "コミュニティ形成",
-      description: "国内最大級のTech系コミュニティを形成",
-      image: "/images/coral21.png",
-      link: "#"
+      date: "2024.02.21",
+      category: "イベント",
+      title: "第3回 Coral Tech Conference 開催決定",
+      description: "最新のブロックチェーン技術とコミュニティ育成をテーマに、年次カンファレンスを開催します。",
+      image: "/images/coral333.png",
+      link: "#",
+      tags: ["カンファレンス", "ブロックチェーン", "コミュニティ"]
     },
     {
-      date: "2024.02",
-      title: "E-schoolを開校",
-      description: "人材育成に向けて本格始動開始",
-      image: "/images/coral111.png",
-      link: "#"
+      date: "2024.02.15",
+      category: "プロダクト",
+      title: "新機能「Coral Connect」リリース",
+      description: "コミュニティメンバー同士のつながりを強化する新機能をリリースしました。",
+      image: "/images/coral555.png",
+      link: "#",
+      tags: ["新機能", "アップデート"]
     },
     {
-      date: "2024.03",
-      title: "国際展開",
-      description: "グローバルコミュニティ形成",
+      date: "2024.02.10",
+      category: "パートナーシップ",
+      title: "地域創生プロジェクト始動",
+      description: "地方自治体と連携し、地域活性化に向けた新しいプロジェクトを開始します。",
       image: "/images/coral676.png",
-      link: "#"
+      link: "#",
+      tags: ["地域創生", "プロジェクト"]
     }
   ];
 
-  const containerRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-
-  // スクロール位置の spring アニメーション
-  const [{ x }, api] = useSpring(() => ({ x: 0 }));
-
-  // ドラッグジェスチャーの設定
-  const bind = useGesture(
-    {
-      onDrag: ({ down, movement: [mx], direction: [xDir], velocity: [vx] }) => {
-        setIsDragging(down);
-        api.start({
-          x: down ? mx : 0,
-          immediate: down,
-          config: {
-            tension: 500,
-            friction: 30
-          }
-        });
-      }
-    },
-    {
-      drag: {
-        from: () => [x.get(), 0],
-        rubberband: true
-      }
-    }
-  );
-
   return (
-    <section className="bg-bg-dark py-section-padding overflow-hidden">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-4xl text-text-light text-center mb-16 font-bold tracking-wider"
+    <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
+      {/* 装飾的な背景要素 */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-radial from-coral-pink/5 to-transparent opacity-30" />
+        <motion.div
+          className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-conic from-coral-pink/10 to-transparent rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      {/* メインコンテンツ */}
+      <div className="relative container mx-auto px-4">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          News
-        </motion.h2>
+          <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
+            News
+          </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mx-auto" />
+        </motion.div>
 
-        <div 
-          ref={containerRef}
-          className="relative overflow-hidden"
-          style={{ perspective: '1000px' }}
+        <motion.div style={{ y, opacity }} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {news.map((item, index) => (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group relative bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden border border-text-light/10"
+            >
+              {/* 画像 */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                
+                {/* カテゴリーバッジ */}
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-light bg-gradient-to-r from-coral-pink to-coral-pink/70 text-white">
+                  {item.category}
+                </span>
+
+                {/* 日付 */}
+                <time className="absolute bottom-4 right-4 text-text-light/90 text-sm tracking-wider">
+                  {item.date}
+                </time>
+              </div>
+
+              {/* コンテンツ */}
+              <div className="p-6">
+                <h3 className="text-xl text-text-light font-light mb-3 group-hover:text-coral-pink transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <p className="text-text-light/70 text-sm leading-relaxed mb-4">
+                  {item.description}
+                </p>
+
+                {/* タグ */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {item.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-2 py-1 text-xs rounded-full border border-text-light/20 text-text-light/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* 詳細リンク */}
+                <a
+                  href={item.link}
+                  className="inline-flex items-center text-text-light/80 text-sm group/link hover:text-coral-pink transition-colors duration-300"
+                >
+                  <span className="mr-2">詳細を見る</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 transform transition-transform duration-300 group-hover/link:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              {/* ホバーエフェクト */}
+              <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            </motion.article>
+          ))}
+        </motion.div>
+
+        {/* もっと見るボタン */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center mt-12"
         >
-          <animated.div
-            {...bind()}
-            className="flex gap-8 cursor-grab active:cursor-grabbing"
-            style={{
-              x,
-              touchAction: 'none'
-            }}
+          <a
+            href="#"
+            className="group inline-flex items-center px-8 py-4 rounded-full border border-text-light/20 text-text-light font-light transition-all duration-300 hover:border-text-light/40 hover:bg-text-light/5"
           >
-            {newsItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.link}
-                className={`relative flex-shrink-0 w-[400px] h-[400px] group overflow-hidden rounded-2xl ${
-                  isDragging ? 'pointer-events-none' : ''
-                }`}
-                initial={{ opacity: 0, rotateY: 45, translateX: 100 }}
-                whileInView={{ 
-                  opacity: 1, 
-                  rotateY: 0, 
-                  translateX: 0,
-                  transition: {
-                    type: "spring",
-                    duration: 1,
-                    delay: index * 0.2
-                  }
-                }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-              >
-                {/* 背景画像 */}
-                <div className="absolute inset-0">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
-                </div>
-
-                {/* コンテンツ */}
-                <div className="relative h-full p-8 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <span className="text-text-light/80 text-sm tracking-wider bg-black/30 px-4 py-2 rounded-full">
-                      {item.date}
-                    </span>
-                    <h3 className="text-2xl text-text-light font-bold drop-shadow-lg">
-                      {item.title}
-                    </h3>
-                    <p className="text-text-light/90 text-base line-clamp-2">
-                      {item.description}
-                    </p>
-                    <span className="inline-flex items-center text-coral-pink text-sm tracking-wider font-medium group-hover:translate-x-2 transition-transform duration-300">
-                      read more
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-
-                  {/* ホバー時のグロー効果 */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" />
-                </div>
-              </motion.a>
-            ))}
-          </animated.div>
-        </div>
+            <span className="relative">
+              <span className="block">もっと見る</span>
+              <span className="absolute left-0 -bottom-px h-px w-full bg-text-light transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
