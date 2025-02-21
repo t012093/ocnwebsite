@@ -1,95 +1,177 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Community = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+
   const communities = [
     {
-      title: "Developer",
-      description: "技術者のためのコミュニティ",
-      image: "/images/coral676.png",
-      link: "/developer"
+      title: "サンゴ保護活動",
+      description: "世界中の海洋環境保護活動家とつながり、実践的な保護活動を展開します。",
+      image: "/images/coral343.png",
+      memberCount: "1,200+",
+      category: "環境保護"
     },
     {
-      title: "Business",
-      description: "ビジネスパーソンのためのコミュニティ",
-      image: "/images/coral333.png",
-      link: "/business"
+      title: "クリエイターギルド",
+      description: "アーティストやデザイナーが集まり、海洋保護をテーマにした作品を制作します。",
+      image: "/images/coral345.png",
+      memberCount: "800+",
+      category: "アート"
     },
     {
-      title: "Creator",
-      description: "クリエイターのためのコミュニティ",
-      image: "/images/coral555.png",
-      link: "/creator"
+      title: "テックラボ",
+      description: "最新技術を活用して、海洋環境の課題解決に取り組むイノベーターたち。",
+      image: "/images/coral578.png",
+      memberCount: "650+",
+      category: "テクノロジー"
     }
   ];
 
   return (
-    <section className="bg-bg-dark py-section-padding">
-      <div className="container mx-auto px-4">
-        <motion.h2
+    <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
+      {/* 装飾的な背景要素 */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ rotate }}
+        >
+          <div className="absolute inset-0 border-2 border-coral-pink/10 rounded-full" />
+          <div className="absolute inset-[50px] border-2 border-coral-pink/20 rounded-full" />
+          <div className="absolute inset-[100px] border-2 border-coral-pink/30 rounded-full" />
+        </motion.div>
+      </div>
+
+      {/* メインコンテンツ */}
+      <div className="relative container mx-auto px-4">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl text-text-light text-center font-light tracking-wider mb-16"
+          className="text-center mb-16"
         >
-          Community
-        </motion.h2>
+          <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
+            Community
+          </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mx-auto" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {communities.map((community, index) => (
-            <motion.a
-              key={index}
-              href={community.link}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative overflow-hidden rounded-2xl aspect-square"
-            >
-              {/* 背景画像 */}
-              <div className="absolute inset-0">
-                <img
-                  src={community.image}
-                  alt={community.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80" />
-              </div>
+        <motion.div style={{ y }} className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {communities.map((community, index) => (
+              <motion.div
+                key={index}
+                style={{ scale }}
+                className="relative"
+              >
+                {/* コミュニティカード */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="group relative"
+                >
+                  {/* メインコンテナ */}
+                  <div className="relative aspect-square">
+                    {/* 円形の画像コンテナ */}
+                    <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-text-light/10">
+                      <img
+                        src={community.image}
+                        alt={community.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    </div>
 
-              {/* コンテンツ */}
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <h3 className="text-2xl text-text-light font-light mb-2">
-                  {community.title}
-                </h3>
-                <p className="text-text-light/80">
-                  {community.description}
-                </p>
-                <div className="mt-4 flex items-center text-text-light">
-                  <span className="text-sm tracking-wider group-hover:mr-2 transition-all duration-300">
-                    View more
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 transform group-hover:translate-x-2 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    {/* コンテンツオーバーレイ */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                      <span className="px-3 py-1 rounded-full text-sm font-light bg-coral-pink/80 text-white w-fit mb-4">
+                        {community.category}
+                      </span>
+                      <h3 className="text-xl text-text-light font-light mb-2">
+                        {community.title}
+                      </h3>
+                      <p className="text-text-light/70 text-sm leading-relaxed mb-4">
+                        {community.description}
+                      </p>
+                      <div className="flex items-center text-text-light/60">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5 mr-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          />
+                        </svg>
+                        <span className="text-sm">{community.memberCount} メンバー</span>
+                      </div>
+                    </div>
+
+                    {/* インタラクティブなリング */}
+                    <motion.div
+                      className="absolute -inset-4 rounded-full border-2 border-coral-pink/30 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 90, 0],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                      }}
                     />
-                  </svg>
-                </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-                {/* ホバー時のグロー効果 */}
-                <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" />
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        {/* コミュニティに参加するボタン */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <a
+            href="#"
+            className="group inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-coral-pink to-coral-pink/70 text-white font-light transition-all duration-300 hover:shadow-lg hover:shadow-coral-pink/20"
+          >
+            <span className="mr-2">コミュニティに参加する</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
