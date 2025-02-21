@@ -1,139 +1,151 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Services = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.6]);
+
   const services = [
     {
-      title: 'DX Solution',
-      subtitle: '変革と革新',
-      description: '老朽化したシステムを最新技術で刷新し、業務効率を大幅に向上。データ駆動型の意思決定と自動化で、企業の競争力を強化します。',
-      image: '/images/coral57.png',
-      link: '/dx'
+      title: "DX",
+      description: "デジタル技術を活用して、サステナブルな海洋環境保護活動のプラットフォームを提供します。",
+      image: "/images/coral444.png",
+      features: ["ブロックチェーン連携", "データ分析基盤", "コミュニティ管理"],
+      gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     },
     {
-      title: 'AR Experience',
-      subtitle: '没入型観光',
-      description: '最新のAR技術を活用し、街の新しい魅力を発見。歴史や文化を体験的に学べる観光コンテンツで、地域の活性化を実現します。',
-      image: '/images/coral100.png',
-      link: '/ar'
+      title: "ART",
+      description: "デジタルアートを通じて、海洋環境保護の重要性を表現し、新しい価値を創造します。",
+      image: "/images/coral555.png",
+      features: ["NFTマーケットプレイス", "クリエイター支援", "展示イベント"],
+      gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     },
     {
-      title: 'Digital Art',
-      subtitle: '創造性の進化',
-      description: 'AIとアートの融合による新しい表現方法の探求。テクノロジーを活用したアート作品の制作支援と、創造的なコミュニティの形成を促進します。',
-      image: '/images/coral10.png',
-      link: '/digital-art'
+      title: "AR",
+      description: "拡張現実技術で海洋生態系の美しさと課題を可視化し、没入感のある体験を提供します。",
+      image: "/images/coral676.png",
+      features: ["AR体験", "インタラクティブ展示", "教育コンテンツ"],
+      gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
-    <section id="services" className="py-24 bg-bg-dark">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-text-light mb-4"
-          >
-            Service
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-text-light/70"
-          >
-            テクノロジーで実現する3つのソリューション
-          </motion.p>
-        </div>
-
+    <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
+      {/* 装飾的な背景要素 */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-radial from-coral-pink/5 to-transparent opacity-30" />
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="absolute -right-1/4 -top-1/4 w-1/2 h-1/2 bg-gradient-conic from-coral-pink/10 to-transparent rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      {/* メインコンテンツ */}
+      <div className="relative container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          {services.map((service) => (
+          <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
+            Services
+          </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mx-auto" />
+        </motion.div>
+
+        <div className="relative">
+          {/* 接続線 */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-coral-pink/0 via-coral-pink/30 to-coral-pink/0" />
+
+          {services.map((service, index) => (
             <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className={`${service.link ? 'group cursor-pointer' : ''}`}
-              onClick={() => service.link && (window.location.href = service.link)}
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.3 }}
+              className={`relative flex items-center gap-8 mb-24 last:mb-0 ${
+                index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+              }`}
             >
-              <div className="bg-bg-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-text-light/10">
-                <div className="relative h-[280px] overflow-hidden">
-                  <motion.img
+              {/* タイムラインドット */}
+              <motion.div
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-coral-pink"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.3 + 0.4 }}
+              />
+
+              {/* 画像セクション */}
+              <motion.div
+                className="w-1/2"
+                whileHover={{ scale: 1.02, rotateY: index % 2 === 0 ? -5 : 5 }}
+                style={{ perspective: "1000px" }}
+              >
+                <div className="relative rounded-2xl overflow-hidden group">
+                  <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                    className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h4 className="text-lg font-medium tracking-wide mb-2">
-                      {service.subtitle}
-                    </h4>
-                    <h3 className="text-2xl md:text-3xl font-bold">
-                      {service.title}
-                    </h3>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <div className="p-6 md:p-8 bg-bg-dark">
-                  <p className="text-lg text-text-light/80 mb-6">
+              </motion.div>
+
+              {/* コンテンツセクション */}
+              <div className="w-1/2">
+                <motion.div
+                  className="bg-black/30 backdrop-blur-md rounded-2xl p-8 border border-text-light/10"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  {/* タイトル */}
+                  <h3 className={`inline-block px-4 py-1 rounded-full text-lg font-light ${service.gradient} text-white mb-6`}>
+                    {service.title}
+                  </h3>
+
+                  {/* 説明文 */}
+                  <p className="text-text-light/70 text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  {service.link && (
-                    <motion.div
-                      className="inline-flex items-center space-x-2 text-accent-blue group-hover:text-text-light transition-colors"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="font-medium">詳しく見る</span>
-                      <svg 
-                        className="w-5 h-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+
+                  {/* 機能リスト */}
+                  <ul className="space-y-3">
+                    {service.features.map((feature, featureIndex) => (
+                      <motion.li
+                        key={featureIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
+                        className="flex items-center text-sm text-text-light/60"
                       >
-                        <path 
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </motion.div>
-                  )}
-                </div>
+                        <span className="w-1.5 h-1.5 rounded-full bg-coral-pink mr-3" />
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
