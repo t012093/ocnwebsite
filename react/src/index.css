@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-bg-dark text-text-light;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-text-light mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-text-light/70;
+  }
+}
+
 /* 基本スタイル */
 :root {
   --coral-pink: #FF7F50;

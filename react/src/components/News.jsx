@@ -1,90 +1,67 @@
 import { motion } from 'framer-motion';
 
 const News = () => {
-  const news = [
+  const newsItems = [
     {
-      image: '/images/coral18.png',
-      title: '革新的な技術開発',
-      description: '最新のテクノロジーを活用した取り組み'
+      date: "2024.01",
+      title: "コミュニティ形成",
+      description: "国内最大級のTech系コミュニティを形成",
+      link: "#"
     },
     {
-      image: '/images/coral15.png',
-      title: '環境保護活動',
-      description: '持続可能な未来へ向けた取り組み'
+      date: "2024.02",
+      title: "E-schoolを開校",
+      description: "人材育成に向けて本格始動開始",
+      link: "#"
     },
     {
-      image: '/images/coral2.png',
-      title: '新規プロジェクト始動',
-      description: '次世代技術の研究開発'
-    },
-    {
-      image: '/images/coral99.png',
-      title: 'パートナーシップ強化',
-      description: 'グローバルネットワークの拡大'
-    },
-    {
-      image: '/images/coral578.png',
-      title: '研究成果発表',
-      description: '最新の研究結果と今後の展望'
-    },
-    {
-      image: '/images/coral55.png',
-      title: '社会貢献活動',
-      description: '地域社会との連携強化'
-    },
-    {
-      image: '/images/coral25.png',
-      title: '未来への投資',
-      description: '次世代育成プログラムの展開'
+      date: "2024.03",
+      title: "国際展開",
+      description: "グローバルコミュニティ形成",
+      link: "#"
     }
   ];
 
   return (
-    <section id="news" className="section-padding bg-bg-cream">
-      <div className="container-custom">
+    <section className="bg-bg-dark py-section-padding">
+      <div className="container mx-auto px-4">
         <motion.h2
+          className="text-4xl text-text-light text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-title"
+          transition={{ duration: 0.6 }}
         >
           News
         </motion.h2>
 
-        <div className="overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
-          >
-            {news.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="min-w-[300px] flex-shrink-0 snap-center"
-              >
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg group">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-coral-pink mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-text-dark/80">{item.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {newsItems.map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.link}
+              className="group p-8 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-500"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="flex flex-col gap-4">
+                <span className="text-text-light/80 text-sm tracking-wider">
+                  {item.date}
+                </span>
+                <h3 className="text-2xl text-text-light font-medium">
+                  {item.title}
+                </h3>
+                <p className="text-text-light/70">
+                  {item.description}
+                </p>
+                <span className="inline-flex text-text-light/80 text-sm tracking-wider font-medium mt-4 transition-transform duration-300 group-hover:translate-x-2">
+                  read more →
+                </span>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>

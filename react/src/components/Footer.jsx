@@ -1,78 +1,97 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
+  const links = [
+    { name: "Community", href: "#" },
+    { name: "Document", href: "#" },
+    { name: "Donation", href: "#" },
+    { name: "Partnership", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms", href: "#" }
+  ];
+
+  const socials = [
+    { name: "Twitter", href: "#", icon: "X" },
+    { name: "Discord", href: "#", icon: "Discord" },
+    { name: "GitHub", href: "#", icon: "GitHub" }
+  ];
 
   return (
-    <footer className="bg-bg-cream py-12">
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
-          <motion.div
-            className="footer-info space-y-4"
-            initial={fadeInUp.initial}
-            animate={fadeInUp.animate}
-            transition={fadeInUp.transition}
-          >
-            <h3 className="text-xl text-coral-pink font-semibold">
-              NPO法人 Open Coral Network
+    <footer className="bg-bg-dark border-t border-coral-pink/10">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* ロゴセクション */}
+          <div className="space-y-4">
+            <h3 className="text-xl text-coral-pink font-medium">
+              Open Coral Network
             </h3>
-            <Link
-              to="/document#npo-about"
-              className="group inline-flex items-center space-x-2 text-text-dark hover:text-coral-pink transition-colors"
-            >
-              <span>団体概要</span>
-              <motion.span
-                className="inline-block"
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
-              >
-                →
-              </motion.span>
-            </Link>
-          </motion.div>
+            <p className="text-text-light/70 text-sm leading-relaxed">
+              地域と創造の交差点
+            </p>
+          </div>
 
-          <motion.div
-            className="footer-links"
-            initial={fadeInUp.initial}
-            animate={fadeInUp.animate}
-            transition={{ ...fadeInUp.transition, delay: 0.2 }}
-          >
-            <ul className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
-              <li>
-                <Link
-                  to="/privacy-policy"
-                  className="text-text-dark hover:text-coral-pink transition-colors"
+          {/* リンクセクション */}
+          <div className="space-y-4">
+            <h4 className="text-lg text-coral-pink font-medium">Links</h4>
+            <ul className="space-y-2">
+              {links.map((link, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
                 >
-                  privacy policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/terms"
-                  className="text-text-dark hover:text-coral-pink transition-colors"
-                >
-                  Terms of Use
-                </Link>
-              </li>
+                  <a
+                    href={link.href}
+                    className="text-text-light/70 hover:text-coral-pink text-sm transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
+                </motion.li>
+              ))}
             </ul>
-          </motion.div>
+          </div>
+
+          {/* ソーシャルメディアセクション */}
+          <div className="space-y-4">
+            <h4 className="text-lg text-coral-pink font-medium">Follow Us</h4>
+            <ul className="space-y-2">
+              {socials.map((social, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
+                >
+                  <a
+                    href={social.href}
+                    className="text-text-light/70 hover:text-coral-pink text-sm transition-colors duration-300"
+                  >
+                    {social.name}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* お問い合わせセクション */}
+          <div className="space-y-4">
+            <h4 className="text-lg text-coral-pink font-medium">Contact</h4>
+            <p className="text-text-light/70 text-sm leading-relaxed">
+              お問い合わせはこちらから
+            </p>
+            <motion.a
+              href="#contact"
+              className="inline-block text-coral-pink text-sm hover:text-coral-light transition-colors duration-300"
+              whileHover={{ x: 5 }}
+            >
+              Contact us →
+            </motion.a>
+          </div>
         </div>
 
-        <motion.div
-          className="mt-8 pt-8 border-t border-gray-200"
-          initial={fadeInUp.initial}
-          animate={fadeInUp.animate}
-          transition={{ ...fadeInUp.transition, delay: 0.4 }}
-        >
-          <p className="text-center text-text-dark/60">
-            &copy; {new Date().getFullYear()} NPO法人 Open Coral Network
+        {/* コピーライト */}
+        <div className="pt-8 border-t border-coral-pink/10">
+          <p className="text-text-light/50 text-center text-sm">
+            © {new Date().getFullYear()} Open Coral Network. All rights reserved.
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

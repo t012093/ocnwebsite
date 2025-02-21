@@ -30,7 +30,7 @@ const MainPage = () => {
 };
 
 const Layout = () => (
-  <div className="min-h-screen bg-white text-text-dark font-mulish">
+  <div className="min-h-screen bg-bg-dark text-text-light font-mulish">
     <Header />
     <main>
       <Outlet />

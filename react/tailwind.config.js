@@ -15,6 +15,9 @@ export default {
         'coral-dark': '#FA5252',
         'text-dark': '#212529',
         'bg-cream': '#FFF5F5',
+        'bg-dark': '#121212',
+        'text-light': '#FFFFFF',
+        'accent-blue': '#4A90E2',
       },
       spacing: {
         'section-padding': '5rem',

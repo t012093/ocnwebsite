@@ -48,14 +48,14 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-bg-dark">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-text-dark mb-4"
+            className="text-4xl md:text-5xl font-bold text-text-light mb-4"
           >
             Service
           </motion.h2>
@@ -64,7 +64,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-text-dark/70"
+            className="text-lg text-text-light/70"
           >
             テクノロジーで実現する3つのソリューション
           </motion.p>
@@ -84,7 +84,7 @@ const Services = () => {
               className={`${service.link ? 'group cursor-pointer' : ''}`}
               onClick={() => service.link && (window.location.href = service.link)}
             >
-              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-bg-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-text-light/10">
                 <div className="relative h-[280px] overflow-hidden">
                   <motion.img
                     src={service.image}
@@ -103,13 +103,13 @@ const Services = () => {
                     </h3>
                   </div>
                 </div>
-                <div className="p-6 md:p-8 bg-white">
-                  <p className="text-lg text-text-dark/80 mb-6">
+                <div className="p-6 md:p-8 bg-bg-dark">
+                  <p className="text-lg text-text-light/80 mb-6">
                     {service.description}
                   </p>
                   {service.link && (
                     <motion.div
-                      className="inline-flex items-center space-x-2 text-coral-pink group-hover:text-coral-light transition-colors"
+                      className="inline-flex items-center space-x-2 text-accent-blue group-hover:text-text-light transition-colors"
                       whileHover={{ x: 5 }}
                     >
                       <span className="font-medium">詳しく見る</span>
