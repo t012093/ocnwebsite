@@ -1,72 +1,172 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 const Features = () => {
+  const [hoveredFeature, setHoveredFeature] = useState(null);
   const features = [
     {
       image: "/images/coral21.png",
       title: "E-school",
       subtitle: "知の共創",
-      description: "学びでつながるプラットフォーム",
+      description: "最先端の学習体験を提供するプラットフォーム。AIを活用した個別最適化された学習環境で、グローバルな知識共有を実現します。",
+      details: "• AIによる学習最適化\n• インタラクティブな教材\n• グローバルな学習コミュニティ",
       link: "https://life-genius-ai.vercel.app/"
     },
     {
       image: "/images/coral111.png",
       title: "Global Exchange",
       subtitle: "活動の共創",
-      description: "世界を広げるコミュニティー",
+      description: "世界中のクリエイターやイノベーターをつなぐプラットフォーム。文化交流を通じて、新しい価値を創造します。",
+      details: "• グローバルネットワーキング\n• クロスカルチャープロジェクト\n• イノベーションハブ",
       link: "/pages/global-exchange.html"
     },
     {
       image: "/images/coral676.png",
       title: "Pro Social Media",
       subtitle: "文化をつなぐ",
-      description: "メディアとプロジェクトの融合した新しいSNS",
+      description: "次世代のソーシャルメディアプラットフォーム。クリエイターとユーザーが共に成長できる革新的な空間を提供します。",
+      details: "• クリエイターエコノミー\n• プロジェクトベース協働\n• コンテンツマネタイズ",
       link: "/pages/coral-pro.html"
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 800,
+        damping: 25,
+        duration: 0.8
+      }
+    }
+  };
+
   return (
-    <section className="bg-bg-dark overflow-hidden">
-      <div className="py-32 px-8 max-w-[1400px] mx-auto">
-        <motion.h2
+    <section className="bg-bg-dark overflow-hidden relative">
+      <div className="py-32 px-8 max-w-[1400px] mx-auto relative z-10">
+        <motion.div
+          className="text-center mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl text-text-light text-center mb-16 font-bold tracking-wider"
+          transition={{ duration: 0.2 }}
         >
-          Features
-        </motion.h2>
-
-        <div className="flex flex-col gap-32 mt-16">
-          {features.map((feature, index) => (
-            <motion.a
-              key={index}
-              href={feature.link}
-              className="group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center p-16 rounded-3xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-black/40 to-black/80 backdrop-blur-sm border border-white/10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+          <motion.h2 
+            className="relative text-5xl text-text-light font-bold tracking-wider inline-block"
+          >
+            Features
+            <motion.div
+              className="absolute -bottom-4 left-0 w-20 h-1 bg-gradient-to-r from-coral-pink to-transparent rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-            >
-              {/* 装飾的な背景要素 */}
-              <div className="absolute inset-0 bg-gradient-to-br from-coral-pink/5 to-coral-pink/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)] rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+                duration: 0.2
+              }}
+            />
+          </motion.h2>
+        </motion.div>
 
-              <div className="order-2 lg:order-none relative z-10 flex flex-col gap-10 max-w-[480px]">
-                <h3 className="text-4xl lg:text-5xl text-text-light font-semibold leading-tight tracking-tight drop-shadow-lg">
+        <motion.div 
+          className="flex flex-col gap-32 mt-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              onHoverStart={() => setHoveredFeature(index)}
+              onHoverEnd={() => setHoveredFeature(null)}
+            >
+              <motion.a
+                href={feature.link}
+                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center p-16 rounded-3xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-black/40 to-black/80 backdrop-blur-sm border border-white/10"
+                whileHover={{
+                  borderColor: "rgba(255, 107, 107, 0.3)",
+                  transition: { duration: 0.15 }
+                }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-coral-pink/5 to-coral-pink/10 rounded-3xl"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{
+                  opacity: hoveredFeature === index ? 1 : 0,
+                  scale: hoveredFeature === index ? 1 : 0.95
+                }}
+                transition={{ 
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  duration: 0.15 
+                }}
+              />
+              <motion.div
+                className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)] rounded-3xl"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: hoveredFeature === index ? 1 : 0
+                }}
+                transition={{ duration: 0.15 }}
+              />
+
+              <div className="order-2 lg:order-none relative z-10 flex flex-col gap-8 max-w-[480px]">
+                <motion.h3
+                  className="text-4xl lg:text-5xl text-text-light font-semibold leading-tight tracking-tight drop-shadow-lg"
+                  initial={{ opacity: 0.9 }}
+                  animate={{
+                    opacity: hoveredFeature === index ? 1 : 0.9,
+                    color: hoveredFeature === index ? "#FF6B6B" : "#FFFFFF"
+                  }}
+                  transition={{ duration: 0.15 }}
+                >
                   {feature.title}
-                </h3>
-                <div>
-                  <h5 className="text-xl lg:text-2xl text-text-light/90 font-medium mb-4 drop-shadow">
+                </motion.h3>
+                <motion.div>
+                  <h5 className="text-xl lg:text-2xl text-coral-light font-medium mb-4 drop-shadow">
                     {feature.subtitle}
                   </h5>
-                  <p className="text-lg text-text-light/70 leading-relaxed">
+                  <p className="text-lg text-text-light/70 leading-relaxed mb-6">
                     {feature.description}
                   </p>
-                </div>
+                  <div className="text-sm text-text-light/60 space-y-2 font-mono">
+                    {feature.details.split('\n').map((detail, i) => (
+                      <p key={i}>{detail}</p>
+                    ))}
+                  </div>
+                </motion.div>
                 <motion.span 
                   className="inline-flex items-center text-text-light/80 text-sm tracking-wider font-medium group-hover:text-coral-pink transition-colors duration-300"
-                  whileHover={{ x: 10 }}
+                  whileHover={{ 
+                    x: 10,
+                    transition: {
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 25
+                    }
+                  }}
+                  initial={{ opacity: 0.8 }}
+                  animate={{
+                    opacity: hoveredFeature === index ? 1 : 0.8
+                  }}
                 >
                   view more 
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,22 +175,58 @@ const Features = () => {
                 </motion.span>
               </div>
 
-              <div className="order-1 lg:order-none relative z-10 overflow-hidden rounded-2xl aspect-square w-full max-w-[500px] mx-auto group-hover:scale-105 transition-transform duration-700 ease-out">
-                <div className="absolute inset-0 bg-gradient-to-tr from-coral-pink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <motion.div 
+                className="order-1 lg:order-none relative z-10 overflow-hidden rounded-2xl aspect-square w-full max-w-[500px] mx-auto shadow-2xl"
+                animate={{
+                  scale: hoveredFeature === index ? 1.05 : 1,
+                  rotateZ: hoveredFeature === index ? 2 : 0
+                }}
+                transition={{ 
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  duration: 0.2
+                }}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-tr from-coral-pink/20 to-transparent"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: hoveredFeature === index ? 1 : 0
+                  }}
+                  transition={{ duration: 0.15 }}
+                />
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 {/* オーバーレイグロー効果 */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: hoveredFeature === index ? 1 : 0
+                  }}
+                  transition={{ duration: 0.15 }}
+                />
+              </motion.div>
 
-              {/* ホバー時のアクセント光効果 */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 group-hover:opacity-30 blur opacity-0 transition-opacity duration-500" />
-            </motion.a>
+              <AnimatePresence>
+                {hoveredFeature === index && (
+                  <motion.div
+                    className="absolute -inset-1 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 blur"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.3 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  />
+                )}
+              </AnimatePresence>
+              </motion.a>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
