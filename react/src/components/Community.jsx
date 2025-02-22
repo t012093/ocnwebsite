@@ -38,18 +38,6 @@ const Community = () => {
 
   return (
     <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
-      {/* 装飾的な背景要素 */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ rotate }}
-        >
-          <div className="absolute inset-0 border-2 border-coral-pink/10 rounded-full" />
-          <div className="absolute inset-[50px] border-2 border-coral-pink/20 rounded-full" />
-          <div className="absolute inset-[100px] border-2 border-coral-pink/30 rounded-full" />
-        </motion.div>
-      </div>
-
       {/* メインコンテンツ */}
       <div className="relative container mx-auto px-4">
         <motion.div
