@@ -35,7 +35,7 @@ const Features = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 2
+        staggerChildren: 0.6
       }
     }
   };
@@ -47,9 +47,9 @@ const Features = () => {
       y: 0,
       transition: {
         type: "spring",
-        stiffness: 800,
+        stiffness: 600,
         damping: 25,
-        duration: 0.8
+        duration: 1
       }
     }
   };
@@ -101,7 +101,7 @@ const Features = () => {
                 href={feature.link}
                 className="group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center p-16 rounded-3xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-black/40 to-black/80 backdrop-blur-sm border border-white/10"
                 whileHover={{
-                  borderColor: "rgba(255, 107, 107, 0.3)",
+                  borderColor: "rgba(255, 174, 107, 0.3)",
                   transition: { duration: 0.15 }
                 }}
             >

@@ -36,8 +36,8 @@ const Header = () => {
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* ロゴ */}
-          <Link to="/" className="text-accent-blue text-xl font-semibold">
-            <span className="drop-shadow-[2px_2px_4px_rgba(74,144,226,0.2)]">
+          <Link to="/" className="text-text-light text-xl font-semibold">
+            <span className="drop-shadow-[2px_2px_4px_rgba(255,255,255,0.2)]">
               OCN
             </span>
           </Link>

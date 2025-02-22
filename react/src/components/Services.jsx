@@ -14,23 +14,23 @@ const Services = () => {
   const services = [
     {
       title: "DX",
-      description: "デジタル技術を活用して、サステナブルな海洋環境保護活動のプラットフォームを提供します。",
+      description: "地域のあらゆる課題をデジタル技術で解決し、持続可能な社会を実現します。",
       image: "/images/coral444.png",
-      features: ["ブロックチェーン連携", "データ分析基盤", "コミュニティ管理"],
+      features: ["保育,介護関連事業", "業務効率化", "コミュニティ管理"],
       gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     },
     {
       title: "ART",
       description: "デジタルアートを通じて、海洋環境保護の重要性を表現し、新しい価値を創造します。",
       image: "/images/coral555.png",
-      features: ["NFTマーケットプレイス", "クリエイター支援", "展示イベント"],
+      features: ["珊瑚アート", "クリエイター支援", "コンペ・展示イベント"],
       gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     },
     {
       title: "AR",
-      description: "拡張現実技術で海洋生態系の美しさと課題を可視化し、没入感のある体験を提供します。",
+      description: "ARで街をデザイン。VRとの融合で地域と世界を繋ぐ",
       image: "/images/coral676.png",
-      features: ["AR体験", "インタラクティブ展示", "教育コンテンツ"],
+      features: ["ゲーム", "インタラクティブ体験", "観光事業"],
       gradient: "bg-gradient-to-r from-coral-pink to-coral-pink/70"
     }
   ];

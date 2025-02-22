@@ -14,22 +14,22 @@ const Community = () => {
 
   const communities = [
     {
-      title: "サンゴ保護活動",
-      description: "世界中の海洋環境保護活動家とつながり、実践的な保護活動を展開します。",
+      title: "企業・NPO向け",
+      description: "ビジネスとソーシャルインパクトを両立させる、革新的なソリューションを共創するコミュニティ。",
       image: "/images/coral343.png",
       memberCount: "1,200+",
-      category: "環境保護"
+      category: "ビジネス支援"
     },
     {
-      title: "クリエイターギルド",
-      description: "アーティストやデザイナーが集まり、海洋保護をテーマにした作品を制作します。",
+      title: "地域コミュニティ",
+      description: "地域に根ざした活動を展開し、持続可能な社会づくりを目指すローカルネットワーク。",
       image: "/images/coral345.png",
       memberCount: "800+",
-      category: "アート"
+      category: "地域活性化"
     },
     {
-      title: "テックラボ",
-      description: "最新技術を活用して、海洋環境の課題解決に取り組むイノベーターたち。",
+      title: "開発者",
+      description: "テクノロジーを活用して社会課題の解決に挑戦する、イノベーターたちのコミュニティ。",
       image: "/images/coral578.png",
       memberCount: "650+",
       category: "テクノロジー"
