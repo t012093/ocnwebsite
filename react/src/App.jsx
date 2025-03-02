@@ -13,6 +13,7 @@ import Community from './components/Community';
 import Vision from './components/Vision';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ProSocialMedia from './components/ProSocialMedia';
 
 const MainPage = () => {
   return (
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "coral-pro",
-        element: <div>Pro Social Media Page</div>,
+        element: <ProSocialMedia />,
       },
       {
         path: "business",

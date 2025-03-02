@@ -26,7 +26,7 @@ const Features = () => {
       subtitle: "文化をつなぐ",
       description: "次世代のソーシャルメディアプラットフォーム。クリエイターとユーザーが共に成長できる革新的な空間を提供します。",
       details: "• クリエイターエコノミー\n• プロジェクトベース協働\n• コンテンツマネタイズ",
-      link: "/pages/coral-pro.html"
+      link: "/coral-pro"
     }
   ];
 
