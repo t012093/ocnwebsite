@@ -14,6 +14,9 @@ import Vision from './components/Vision';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProSocialMedia from './components/ProSocialMedia';
+import GlobalExchange from './components/GlobalExchange';
+import Document from './components/Document';
+import AboutDoc from './components/docs/About';
 
 const MainPage = () => {
   return (
@@ -59,7 +62,7 @@ const router = createBrowserRouter([
       },
       {
         path: "global-exchange",
-        element: <div>Global Exchange Page</div>,
+        element: <GlobalExchange />,
       },
       {
         path: "coral-pro",
@@ -79,7 +82,11 @@ const router = createBrowserRouter([
       },
       {
         path: "document",
-        element: <div>Document Page</div>,
+        element: <Document />,
+      },
+      {
+        path: "about",
+        element: <AboutDoc />,
       },
       {
         path: "privacy-policy",

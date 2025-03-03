@@ -17,9 +17,9 @@ const About = () => {
     <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
       {/* 装飾的な背景要素 */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-radial from-coral-pink/5 to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-gradient-radial from-[#FF7F50]/5 to-transparent opacity-50" />
         <motion.div
-          className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-conic from-coral-pink/20 to-transparent rounded-full blur-3xl"
+          className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-conic from-[#FF7F50]/20 to-transparent rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -46,7 +46,7 @@ const About = () => {
               <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
                 About
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mb-8" />
+              <div className="h-1 w-20 bg-gradient-to-r from-[#FF7F50] to-transparent rounded-full mb-8" />
             </motion.div>
 
             <motion.div
@@ -56,7 +56,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF7F50]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
               <div className="relative bg-black/40 backdrop-blur-lg p-8 rounded-2xl border border-text-light/10">
                 <h3 className="text-2xl text-text-light font-light mb-4">
                   コミュニティの力を信じて
@@ -75,7 +75,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF7F50]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
               <div className="relative bg-black/40 backdrop-blur-lg p-8 rounded-2xl border border-text-light/10">
                 <h3 className="text-2xl text-text-light font-light mb-4">
                   技術革新と共に
@@ -97,7 +97,7 @@ const About = () => {
             >
               <a
                 href="#"
-                className="group inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-coral-pink to-coral-pink/70 text-text-light font-light transition-all duration-300 hover:shadow-lg hover:shadow-coral-pink/20 hover:-translate-y-0.5"
+                className="group inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-[#FF7F50] to-[#FF6347] text-text-light font-light transition-all duration-300 hover:shadow-lg hover:shadow-[#FF7F50]/20 hover:-translate-y-0.5"
               >
                 <span className="relative">
                   <span className="block transition-transform duration-300 group-hover:translate-x-2">
@@ -161,7 +161,7 @@ const About = () => {
             </motion.div>
 
             {/* デコレーション要素 */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-coral-pink/20 to-transparent opacity-20 blur-3xl" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-[#FF7F50]/20 to-transparent opacity-20 blur-3xl" />
           </div>
         </div>
       </div>

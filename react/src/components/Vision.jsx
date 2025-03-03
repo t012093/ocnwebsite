@@ -39,10 +39,18 @@ const Vision = () => {
             alt="Vision background"
             className="w-full h-full object-cover opacity-70"
           />
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-r from-[#FF7F50]/10 to-transparent opacity-0"
+            animate={{ opacity: [0, 0.3, 0] }}
+            transition={{ duration: 5, repeat: Infinity }}
+          />
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FF7F50]/5 to-transparent opacity-30" />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -57,7 +65,11 @@ const Vision = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.3 }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl whitespace-pre-line leading-relaxed"
+              className={`whitespace-pre-line leading-relaxed ${
+                index === 0 
+                  ? 'text-2xl md:text-3xl font-light text-[#FF7F50] drop-shadow-glow'
+                  : 'text-lg md:text-xl text-gray-200'
+              }`}
             >
               {text}
             </motion.p>

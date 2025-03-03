@@ -18,7 +18,7 @@ const Features = () => {
       subtitle: "活動の共創",
       description: "世界中のクリエイターやイノベーターをつなぐプラットフォーム。文化交流を通じて、新しい価値を創造します。",
       details: "• グローバルネットワーキング\n• クロスカルチャープロジェクト\n• イノベーションハブ",
-      link: "/pages/global-exchange.html"
+      link: "/global-exchange"
     },
     {
       image: "/images/coral676.png",
@@ -69,7 +69,7 @@ const Features = () => {
           >
             Features
             <motion.div
-              className="absolute -bottom-4 left-0 w-20 h-1 bg-gradient-to-r from-coral-pink to-transparent rounded-full"
+              className="absolute -bottom-4 left-0 w-20 h-1 bg-gradient-to-r from-[#FF7F50] to-transparent rounded-full"
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
               viewport={{ once: true }}
@@ -101,12 +101,12 @@ const Features = () => {
                 href={feature.link}
                 className="group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center p-16 rounded-3xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-black/40 to-black/80 backdrop-blur-sm border border-white/10"
                 whileHover={{
-                  borderColor: "rgba(255, 174, 107, 0.3)",
+                  borderColor: "rgba(255, 127, 80, 0.3)",
                   transition: { duration: 0.15 }
                 }}
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-coral-pink/5 to-coral-pink/10 rounded-3xl"
+                className="absolute inset-0 bg-gradient-to-br from-[#FF7F50]/5 to-[#FF7F50]/10 rounded-3xl"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{
                   opacity: hoveredFeature === index ? 1 : 0,
@@ -134,14 +134,14 @@ const Features = () => {
                   initial={{ opacity: 0.9 }}
                   animate={{
                     opacity: hoveredFeature === index ? 1 : 0.9,
-                    color: hoveredFeature === index ? "#FF6B6B" : "#FFFFFF"
+                    color: hoveredFeature === index ? "#FF7F50" : "#FFFFFF"
                   }}
                   transition={{ duration: 0.15 }}
                 >
                   {feature.title}
                 </motion.h3>
                 <motion.div>
-                  <h5 className="text-xl lg:text-2xl text-coral-light font-medium mb-4 drop-shadow">
+                  <h5 className="text-xl lg:text-2xl text-[#FF7F50] font-medium mb-4 drop-shadow">
                     {feature.subtitle}
                   </h5>
                   <p className="text-lg text-text-light/70 leading-relaxed mb-6">
@@ -154,7 +154,7 @@ const Features = () => {
                   </div>
                 </motion.div>
                 <motion.span 
-                  className="inline-flex items-center text-text-light/80 text-sm tracking-wider font-medium group-hover:text-coral-pink transition-colors duration-300"
+                  className="inline-flex items-center text-text-light/80 text-sm tracking-wider font-medium group-hover:text-[#FF7F50] transition-colors duration-300"
                   whileHover={{ 
                     x: 10,
                     transition: {
@@ -189,7 +189,7 @@ const Features = () => {
                 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-tr from-coral-pink/20 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-tr from-[#FF7F50]/20 to-transparent"
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: hoveredFeature === index ? 1 : 0
@@ -215,7 +215,7 @@ const Features = () => {
               <AnimatePresence>
                 {hoveredFeature === index && (
                   <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-coral-pink/0 via-coral-pink/30 to-coral-pink/0 blur"
+                    className="absolute -inset-1 bg-gradient-to-r from-[#FF7F50]/0 via-[#FF7F50]/30 to-[#FF7F50]/0 blur"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.3 }}
                     exit={{ opacity: 0 }}

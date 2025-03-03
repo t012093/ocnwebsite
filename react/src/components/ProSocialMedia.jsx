@@ -77,13 +77,15 @@ const ProSocialMedia = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <button 
-                className="px-8 py-4 bg-gradient-to-r from-coral-pink to-coral-dark text-white rounded-full text-lg font-light tracking-wider hover:scale-105 transition-all duration-300"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                体験を始める
-              </button>
+              <a href="https://coralapp.vercel.app/">
+                <button 
+                  className="px-8 py-4 bg-gradient-to-r from-coral-pink to-coral-dark text-white rounded-full text-lg font-light tracking-wider hover:scale-105 transition-all duration-300"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  デモを体験
+                </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -289,13 +291,18 @@ const ProSocialMedia = () => {
             <br />
             あなたのクリエイティビティを世界へ
           </p>
-          <motion.button 
-            className="px-12 py-4 bg-gradient-to-r from-coral-pink to-coral-dark text-white rounded-full text-lg font-light tracking-wider"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.a
+            href="https://coralapp.vercel.app/"
+            className="inline-block"
           >
-            今すぐ始める
-          </motion.button>
+            <motion.button 
+              className="px-12 py-4 bg-gradient-to-r from-coral-pink to-coral-dark text-white rounded-full text-lg font-light tracking-wider"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              デモを体験
+            </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* 装飾的な背景グラデーション */}

@@ -23,8 +23,25 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-bg-dark py-section-padding">
-      <div className="container mx-auto px-4">
+    <section className="relative bg-bg-dark py-section-padding overflow-hidden">
+      {/* 装飾的な背景要素 */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-radial from-[#FF7F50]/5 to-transparent opacity-30" />
+        <motion.div
+          className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-conic from-[#FF7F50]/10 to-transparent rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <motion.h2
           className="text-4xl text-text-light text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +74,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-white/40 focus:ring-1 focus:ring-white/40 outline-none transition-colors text-text-light placeholder-text-light/30"
+                className="w-full px-4 py-3 bg-black/30 border border-[#FF7F50]/20 rounded-lg focus:border-[#FF7F50]/40 focus:ring-1 focus:ring-[#FF7F50]/40 outline-none transition-colors text-text-light placeholder-text-light/30"
                 placeholder="Your name"
               />
             </div>
@@ -76,7 +93,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-white/40 focus:ring-1 focus:ring-white/40 outline-none transition-colors text-text-light placeholder-text-light/30"
+                className="w-full px-4 py-3 bg-black/30 border border-[#FF7F50]/20 rounded-lg focus:border-[#FF7F50]/40 focus:ring-1 focus:ring-[#FF7F50]/40 outline-none transition-colors text-text-light placeholder-text-light/30"
                 placeholder="Your email"
               />
             </div>
@@ -95,7 +112,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-white/40 focus:ring-1 focus:ring-white/40 outline-none transition-colors text-text-light placeholder-text-light/30 resize-none"
+                className="w-full px-4 py-3 bg-black/30 border border-[#FF7F50]/20 rounded-lg focus:border-[#FF7F50]/40 focus:ring-1 focus:ring-[#FF7F50]/40 outline-none transition-colors text-text-light placeholder-text-light/30 resize-none"
                 placeholder="Your message"
               />
             </div>
@@ -103,7 +120,7 @@ const Contact = () => {
             <div className="text-center">
               <motion.button
                 type="submit"
-                className="px-8 py-3 bg-white/10 text-text-light rounded-lg hover:bg-white/20 transition-colors duration-300"
+                className="px-8 py-3 bg-gradient-to-r from-[#FF7F50] to-[#FF6347] text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#FF7F50]/20"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

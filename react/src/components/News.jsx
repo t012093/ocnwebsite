@@ -45,9 +45,9 @@ const News = () => {
     <section ref={containerRef} className="relative bg-bg-dark py-section-padding overflow-hidden">
       {/* 装飾的な背景要素 */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-radial from-coral-pink/5 to-transparent opacity-30" />
+        <div className="absolute inset-0 bg-gradient-radial from-[#FF7F50]/5 to-transparent opacity-30" />
         <motion.div
-          className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-conic from-coral-pink/10 to-transparent rounded-full blur-3xl"
+          className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-conic from-[#FF7F50]/10 to-transparent rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.2, 0.3, 0.2],
@@ -72,7 +72,7 @@ const News = () => {
           <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
             News
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mx-auto" />
+          <div className="h-1 w-20 bg-gradient-to-r from-[#FF7F50] to-transparent rounded-full mx-auto" />
         </motion.div>
 
         <motion.div style={{ y, opacity }} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -95,7 +95,7 @@ const News = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 
                 {/* カテゴリーバッジ */}
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-light bg-gradient-to-r from-coral-pink to-coral-pink/70 text-white">
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-light bg-gradient-to-r from-[#FF7F50] to-[#FF6347] text-white">
                   {item.category}
                 </span>
 
@@ -107,7 +107,7 @@ const News = () => {
 
               {/* コンテンツ */}
               <div className="p-6">
-                <h3 className="text-xl text-text-light font-light mb-3 group-hover:text-coral-pink transition-colors duration-300">
+                <h3 className="text-xl text-text-light font-light mb-3 group-hover:text-[#FF7F50] transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="text-text-light/70 text-sm leading-relaxed mb-4">
@@ -129,7 +129,7 @@ const News = () => {
                 {/* 詳細リンク */}
                 <a
                   href={item.link}
-                  className="inline-flex items-center text-text-light/80 text-sm group/link hover:text-coral-pink transition-colors duration-300"
+                  className="inline-flex items-center text-text-light/80 text-sm group/link hover:text-[#FF7F50] transition-colors duration-300"
                 >
                   <span className="mr-2">詳細を見る</span>
                   <svg
@@ -150,7 +150,7 @@ const News = () => {
               </div>
 
               {/* ホバーエフェクト */}
-              <div className="absolute inset-0 bg-gradient-to-r from-coral-pink/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF7F50]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </motion.article>
           ))}
         </motion.div>
@@ -165,11 +165,11 @@ const News = () => {
         >
           <a
             href="#"
-            className="group inline-flex items-center px-8 py-4 rounded-full border border-text-light/20 text-text-light font-light transition-all duration-300 hover:border-text-light/40 hover:bg-text-light/5"
+            className="group inline-flex items-center px-8 py-4 rounded-full border border-text-light/20 text-text-light font-light transition-all duration-300 hover:border-[#FF7F50]/40 hover:text-[#FF7F50]"
           >
             <span className="relative">
               <span className="block">もっと見る</span>
-              <span className="absolute left-0 -bottom-px h-px w-full bg-text-light transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute left-0 -bottom-px h-px w-full bg-[#FF7F50] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

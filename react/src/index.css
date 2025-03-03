@@ -178,11 +178,11 @@ input, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-bg-cream;
+  @apply bg-black/100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-coral-pink/50 rounded-full hover:bg-coral-pink transition-colors;
+  @apply bg-black/50 rounded-full hover:bg-black/70 transition-colors;
 }
 
 /* フォーカスアウトライン */

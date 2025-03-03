@@ -50,7 +50,7 @@ const Community = () => {
           <h2 className="text-4xl text-text-light font-light tracking-wider mb-4">
             Community
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-coral-pink to-transparent rounded-full mx-auto" />
+          <div className="h-1 w-20 bg-gradient-to-r from-[#FF7F50] to-transparent rounded-full mx-auto" />
         </motion.div>
 
         <motion.div style={{ y }} className="relative">
@@ -83,7 +83,7 @@ const Community = () => {
 
                     {/* コンテンツオーバーレイ */}
                     <div className="absolute inset-0 flex flex-col justify-end p-8">
-                      <span className="px-3 py-1 rounded-full text-sm font-light bg-coral-pink/80 text-white w-fit mb-4">
+                      <span className="px-3 py-1 rounded-full text-sm font-light bg-gradient-to-r from-[#FF7F50] to-[#FF6347] text-white w-fit mb-4">
                         {community.category}
                       </span>
                       <h3 className="text-xl text-text-light font-light mb-2">
@@ -113,7 +113,7 @@ const Community = () => {
 
                     {/* インタラクティブなリング */}
                     <motion.div
-                      className="absolute -inset-4 rounded-full border-2 border-coral-pink/30 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                      className="absolute -inset-4 rounded-full border-2 border-[#FF7F50]/30 opacity-0 group-hover:opacity-100 transition-all duration-500"
                       animate={{
                         scale: [1, 1.1, 1],
                         rotate: [0, 90, 0],
@@ -141,7 +141,7 @@ const Community = () => {
         >
           <a
             href="#"
-            className="group inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-coral-pink to-coral-pink/70 text-white font-light transition-all duration-300 hover:shadow-lg hover:shadow-coral-pink/20"
+            className="group inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-[#FF7F50] to-[#FF6347] text-white font-light transition-all duration-300 hover:shadow-lg hover:shadow-[#FF7F50]/20"
           >
             <span className="mr-2">コミュニティに参加する</span>
             <svg
