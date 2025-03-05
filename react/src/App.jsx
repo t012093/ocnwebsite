@@ -15,8 +15,13 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProSocialMedia from './components/ProSocialMedia';
 import GlobalExchange from './components/GlobalExchange';
+import CoralPro from './components/CoralPro';
 import Document from './components/Document';
 import AboutDoc from './components/docs/About';
+import DXProject from './components/docs/DXProject';
+import TetottoApp from './components/docs/TetottoApp';
+import AR from './components/AR';
+import Donation from './components/Donation';
 
 const MainPage = () => {
   return (
@@ -54,11 +59,15 @@ const router = createBrowserRouter([
       },
       {
         path: "dx",
-        element: <div>DX Page</div>,
+        element: <DXProject />,
+      },
+      {
+        path: "tetotto",
+        element: <TetottoApp />,
       },
       {
         path: "ar",
-        element: <div>AR Page</div>,
+        element: <AR />,
       },
       {
         path: "global-exchange",
@@ -66,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path: "coral-pro",
-        element: <ProSocialMedia />,
+        element: <CoralPro />,
       },
       {
         path: "business",
@@ -95,6 +104,10 @@ const router = createBrowserRouter([
       {
         path: "terms",
         element: <div>Terms of Use Page</div>,
+      },
+      {
+        path: "donation",
+        element: <Donation />,
       },
     ],
   },

@@ -1,0 +1,331 @@
+/* AR Experience styles */
+.arDemoVideo {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.arDemoVideo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arOverlay {
+    position: relative;
+    min-height: calc(100vh - 60px);
+    background: radial-gradient(circle at center, rgba(18, 194, 233, 0.1) 0%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.arTitle {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #8cc1e4, #b5b5ec, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 10s ease infinite;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.arDescription {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    color: white;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.arCtaButton {
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    background: linear-gradient(45deg, #5fd7f2, #c694e0, #e99ea3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.arCtaButton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.arCtaButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.arCtaButton:hover::after {
+    opacity: 1;
+}
+
+.arFeatures {
+    padding: 8rem 2rem;
+    background: radial-gradient(circle at center, rgba(18, 194, 233, 0.1) 0%, transparent 70%);
+    position: relative;
+}
+
+.arGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.arFeatureCard {
+    background: radial-gradient(circle at center, rgba(18, 194, 233, 0.1) 0%, transparent 70%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arFeatureCard:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.arFeatureCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.arFeatureCard:hover img {
+    transform: scale(1.05);
+}
+
+.arFeatureCard h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.arFeatureCard p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.arSteps {
+    padding: 8rem 2rem;
+    background: radial-gradient(circle at center, rgba(20, 166, 199, 0.1) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stepsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.arStep {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.arStep:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.arStep h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.arStep p {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.arDemo {
+    padding: 8rem 2rem;
+    background: radial-gradient(circle at center, rgba(46, 128, 144, 0.225) 10%, transparent 90%);
+    text-align: center;
+    position: relative;
+}
+
+.demoContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.demoDescription {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.demoContainer h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.demoAction {
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.demoCta {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(45deg, #5fd7f2, #c694e0);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(95, 215, 242, 0.3);
+}
+
+.demoCta:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(95, 215, 242, 0.4);
+    background: linear-gradient(45deg, #12c2e9, #c471ed);
+}
+
+.demoCtaArrow {
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.demoCta:hover .demoCtaArrow {
+    transform: translateX(5px);
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1024px) {
+    .arTitle {
+        font-size: 3.5rem;
+    }
+
+    .arGrid,
+    .stepsContainer {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .arTitle {
+        font-size: 2.5rem;
+    }
+    
+    .arDescription {
+        font-size: 1.2rem;
+    }
+    
+    .arOverlay {
+        padding: 2rem 1rem;
+    }
+
+    .arCtaButton {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    .arFeatures,
+    .arSteps,
+    .arDemo {
+        padding: 4rem 1rem;
+    }
+
+    .demoContainer h2 {
+        font-size: 2rem;
+    }
+
+    .demoCta {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .demoCtaArrow {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .demoAction {
+        margin: 6rem auto;
+    }
+
+    .demoCta {
+        padding: 2rem 4rem;
+        font-size: 1.8rem;
+    }
+
+    .demoCtaArrow {
+        font-size: 2rem;
+    }
+}

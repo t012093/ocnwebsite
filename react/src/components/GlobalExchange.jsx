@@ -19,13 +19,13 @@ const GlobalExchange = () => {
     },
     {
       icon: "/images/coral222.png",
-      title: "組織形成",
-      description: "国際的な新しい組織の形成と連携"
+      title: "新しい組織",
+      description: "地域とグローバルのつながり"
     },
     {
       icon: "/images/coral233.png",
       title: "企画提案",
-      description: "助成金に対する革新的な企画提案"
+      description: "国際プロジェクトを提案"
     },
     {
       icon: "/images/coral444.png",

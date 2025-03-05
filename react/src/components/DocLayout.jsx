@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const DocLayout = ({ children, title, description }) => {
   return (
-    <div className="py-8 px-8 max-w-4xl mx-auto">
+    <div className="pt-24 pb-8 px-8 max-w-4xl mx-auto">
       {/* ヘッダー */}
       <div className="mb-12 text-center">
         <motion.h1 

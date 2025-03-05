@@ -11,45 +11,35 @@ const Document = () => {
     {
       title: 'プロジェクト',
       items: [
-        { name: 'DXプロジェクト概要', href: '/dx', description: 'デジタルトランスフォーメーションプロジェクトの概要と目標' },
-        { name: 'ARプロジェクト概要', href: '/ar', description: '拡張現実プロジェクトの概要と技術仕様' }
+        { name: '保育ICT', href: '/tetotto', description: 'デジタルトランスフォーメーションプロジェクトの概要と目標' },
+        { name: 'ARプロジェク', href: '/ar', description: '拡張現実プロジェクトの概要と技術仕様' },
+        { name: 'e-School', href: '/coral-pro', description: 'オンライン教育プラットフォームの展開' },
+        { name: 'Pro Social Media', href: '/coral-pro', description: '次世代ソーシャルメディアプラットフォーム' },
       ]
     },
     {
       title: 'サービス',
       items: [
-        { name: '開発ロードマップ', href: '/dx-roadmap', description: 'プロジェクトの開発スケジュールと主要マイルストーン' },
-        { name: 'ARTプロジェクト概要', href: '/art', description: 'アートプロジェクトの概要とビジョン' }
+        { name: 'DX支援サービス', href: '/dx', description: 'デジタル化推進のための包括的支援' },
+        { name: '法人支援プログラム', href: '/corporate-support', description: '助成金申請支援、人材育成、経営コンサルティング' },
+        { name: '人材育成プログラム', href: '/talent-development', description: 'AI人材、デザイナー、クリエイターの育成支援' },
+        { name: '国際交流', href: '/global-exchange', description: '国際文化交流プロジェクト' }
       ]
     },
     {
       title: 'コミュニティ',
       items: [
-        { name: 'NPO', href: '/npo', description: 'NPO法人としての理念と活動' },
-        { name: '団体概要', href: '/about', description: 'Open Coral Networkの概要と使命' },
-        { name: '活動内容', href: '/activities', description: '現在の活動内容と今後の展開' }
+        { name: 'パートナーシップ', href: '/business-community', description: '法人パートナー向けネットワーク' },
+        { name: '開発者コミュニティ', href: '/creators-hub', description: '開発者・クリエイター向けコミュニティ' },
+        { name: 'ユーザーコミュニティ', href: '/innovators-club', description: '一般ユーザー向けコミュニティプログラム' }
       ]
     },
     {
-      title: '寄付',
+      title: 'NPO',
       items: [
-        { name: '寄付について', href: '/donation', description: '寄付の方法と使途について' },
-        { name: '寄付者特典', href: '/donation-benefits', description: '寄付者への特典プログラム' },
+        { name: 'NPOについて', href: '/about', description: 'Open Coral Networkの理念と活動' },
+        { name: '寄付のお願い', href: '/donation', description: '寄付プログラムと活動支援について' },
         { name: '活動報告', href: '/activity-report', description: '寄付金の使途と活動の報告' }
-      ]
-    },
-    {
-      title: '法人向け',
-      items: [
-        { name: 'パートナーシップ', href: '/partnership', description: '法人パートナーシッププログラムの詳細' },
-        { name: '導入事例', href: '/case-studies', description: '企業での導入・活用事例' }
-      ]
-    },
-    {
-      title: '開発者向け',
-      items: [
-        { name: '技術ドキュメント', href: '/tech-docs', description: 'APIリファレンスと技術仕様' },
-        { name: '開発リソース', href: '/dev-resources', description: 'SDK、ツール、サンプルコード' }
       ]
     }
   ];
@@ -71,12 +61,12 @@ const Document = () => {
         <motion.aside
           initial={{ x: -280 }}
           animate={{ x: isSidebarOpen ? 0 : -280 }}
-          className="fixed left-0 top-16 h-screen w-80 bg-gray-900 border-r border-gray-800 overflow-y-auto pb-20"
+          className="fixed left-0 top-16 h-screen w-80 bg-black border-r border-gray-800 overflow-y-auto pb-20"
         >
           {/* サイドバートグルボタン */}
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
+            className="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-900 transition-colors duration-200"
           >
             <svg
               className="w-6 h-6 text-gray-400"
@@ -93,54 +83,31 @@ const Document = () => {
             </svg>
           </button>
 
-          <div className="px-4 py-8">
-            <div className="relative">
-              <input
-                type="search"
-                placeholder="ドキュメントを検索..."
-                className="w-full px-4 py-2 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF7F50]/50"
-              />
-              <svg
-                className="absolute right-3 top-2.5 w-5 h-5 text-gray-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-
-            <nav className="mt-8 space-y-8">
-              {navigation.map((section) => (
-                <div key={section.title}>
-                  <h3 className="px-3 text-sm font-semibold text-[#FF7F50] mb-3">
-                    {section.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {section.items.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={`block px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
-                            location.pathname === item.href
-                              ? 'bg-[#FF7F50]/10 text-[#FF7F50]'
-                              : 'text-gray-400 hover:bg-gray-800 hover:text-[#FF7F50]'
-                          }`}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </nav>
-          </div>
+          <nav className="px-4 py-8">
+            {navigation.map((section) => (
+              <div key={section.title} className="mb-8">
+                <h3 className="px-3 text-sm font-semibold text-[#FF7F50] mb-3">
+                  {section.title}
+                </h3>
+                <ul className="space-y-2">
+                  {section.items.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        to={item.href}
+                        className={`block px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                          location.pathname === item.href
+                            ? 'bg-[#FF7F50]/10 text-[#FF7F50]'
+                            : 'text-gray-400 hover:bg-gray-900 hover:text-[#FF7F50]'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </motion.aside>
 
         {/* メインコンテンツ */}
